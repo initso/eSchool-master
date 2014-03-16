@@ -1,0 +1,34 @@
+'.container[formFactor=tablet]': {
+	layout:'horizontal',
+	width:Ti.UI.SIZE
+},
+
+'.agendaColContainer': {
+	width:'33%'
+},
+
+'.agendaColumn': {
+	top:'10dp',
+	left:'10dp',
+	right:'10dp',
+	bottom:'10dp'
+},
+
+'.dayHeader': {
+	top:'10dp',
+	textAlign:'center'
+},
+
+'.dayTable': {
+	top:'50dp',
+	left:'10dp',
+	right:'10dp',
+	bottom:'10dp'
+},
+
+'#agendaTable': {
+	top:'55dp',
+	left:'10dp',
+	right:'10dp',
+	bottom:'10dp'
+}

@@ -1,0 +1,37 @@
+"#tabHome[platform=ios formFactor=handheld]": {
+    icon: 'images/53-house.png'
+}
+
+"#tableHome":{
+	top: "10%",
+	width: "40%",
+	left: "5%",
+	scrollable: false,
+	height:Ti.UI.SIZE
+}
+
+"#tableHome2":{
+	top: "10%",
+	width: "40%",
+	left: "55%",
+	scrollable: false,
+	height:Ti.UI.SIZE
+	
+}
+
+"#tableHome3":{
+	top: "60%",
+	width: "40%",
+	left: "5%",
+	scrollable: false,
+	height:Ti.UI.SIZE
+}
+
+"#tableHome4":{
+	top: "60%",
+	width: "40%",
+	left: "55%",
+	scrollable: false,
+	height:Ti.UI.SIZE
+	
+}

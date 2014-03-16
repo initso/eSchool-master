@@ -1,0 +1,218 @@
+/* Class Style */
+/* Window Container */
+".container": {
+	backgroundColor: "#F2F2F2",
+},
+// ".tableRowBackground": {
+	// width: Ti.UI.FILL,
+	// height: '61dp',
+	// bakgroundColor: '#D9D9D9'
+// },
+// ".tableRow": {
+	// left: '5dp',
+	// right: '5dp',
+	// top: '5dp',
+	// bottom: '5dp',
+	// bakgroundColor: '#FFFFFF'
+// },
+".subject": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	left: '8dp',
+	top: '5dp',
+	font: {
+		fontSize: 12,
+		fontWeight: 'bold'
+	},
+	color: '#000000'
+},
+".teacher": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	font: {
+		fontSize: 10
+	},
+	color: '#77933C'
+},
+".lectureDetail": {
+	top: '24dp',
+	height: '14dp',
+	left: '8dp',
+	right: '8dp',
+	layout: 'horizontal'
+},
+".description": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	font: {
+		fontSize: 10
+	},
+	color: '#7F7F7F',
+	ellipsize: true
+},
+".rightImage": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	right: '8dp',
+	top: '5dp',
+	image: '/images/alert.png'
+},
+
+/* UI element common styling */
+"TableViewRow": {
+	height: '65dp', 
+	backgroundColor: '#FFFFFF',
+	borderColor: '#D9D9D9',
+	borderWidth: 2
+},
+
+/* Header View */
+"#headerView": {
+	width: Ti.UI.FILL,
+	height: '5%',
+	top: '0dp',
+	backgroundColor: "transparent",
+},
+"#backArrow":	{
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	left: '8dp',
+	image: "/images/backArrow.jpg"
+},
+"#username": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: 14
+	},
+	right: '98dp',
+	color: '#000000'
+},
+"#message":	{
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	right: '68dp',
+	image: '/images/message.jpg'
+},
+"#settings":	{
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	right: '38dp',
+	image: '/images/settings.jpg'
+},
+"#help":	{
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	right: '8dp',
+	image: '/images/help.jpg'
+},
+
+/* Title View */
+"#titleView": {
+	width: Ti.UI.FILL,
+	height: '5%',
+	top: '5%',
+	backgroundColor: "#31859C"
+},
+"#title": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: 16,
+		fontWeight: 'bold'
+	},
+	left: '5dp',
+	color: '#FFFFFF'
+},
+
+/* Content View : Lecture List */
+"#contentView": {
+	width: Ti.UI.FILL,
+	height: '85%',
+	top: '10%',
+	backgroundColor: "transparent"
+},
+"#calendarContainer": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	top: '5dp',
+	left: '15dp',
+	layout: 'horizontal',
+	backgroundColor: "transparent"
+},
+"#calendar": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: 10
+	},
+	left: '0dp',
+	top: '0dp',
+	color: '#559FE3'
+},
+"#downArrow": {
+	width: '10dp',
+	height: '8dp',
+	left: '3dp',
+	image: '/images/downArrow.png'
+},
+"#date": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: 10
+	},
+	left: '8dp',
+	top: '30dp',
+	color: '#559FE3'
+},
+"#count": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: 10
+	},
+	right: '20dp',
+	top: '30dp',
+	color: '#7F7F7F'
+},
+"#table": {
+	left: '8dp',
+	right: '8dp',
+	top: '50dp',
+	height: Ti.UI.SIZE,
+	borderColor: '#D9D9D9',
+	borderWidth: 2
+},
+"#description1": {
+	height: '14dp',
+	left: '3dp',
+	right: '8dp',
+	top: '0dp'
+},
+"#description2": {
+	height: '14dp',
+	left: '8dp',
+	right: '8dp',
+	top: '41dp'
+},
+
+/* Footer View */
+"#footerView": {
+	width: Ti.UI.FILL,
+	height: '5%',
+	bottom: '0dp',
+	backgroundColor: "transparent"
+},
+"#search":	{
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	right: '38dp',
+	image: '/images/search.png'
+},
+"#list":	{
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	right: '8dp',
+	image: '/images/list.png'
+}

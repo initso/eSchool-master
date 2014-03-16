@@ -1,0 +1,37 @@
+'.container': {
+	backgroundColor:'white',
+	opacity: '0.7',
+	//backgroundImage:'/img/tabs/bg-tab.png',
+	height:'46dp',
+	bottom:0
+},
+
+'.tab': {
+	zIndex:10,
+	width:'20%'
+},
+
+'#postIcon': {
+	height:'46dp',
+	width:'64dp',
+	backgroundImage:'/img/tabs/btn-post-default.png',
+	backgroundSelectedImage:'/img/tabs/btn-post-pressed.png'
+},
+
+'#homeIcon': {
+	image:'/img/tabs/btn-home-pressed.png'
+},
+
+'#feedbackIcon': {
+	image:'/img/tabs/btn-feedback-default.png'
+},
+
+'#agendaIcon': {
+	image:'/img/tabs/btn-agenda-default.png'
+},
+
+'#venueIcon': {
+	image:'/img/tabs/btn-venue-default.png'
+}
+
+

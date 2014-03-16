@@ -1,0 +1,30 @@
+<Alloy>
+	<Window class="container">
+		<View id="titleView">
+			<Label id="title">
+				Lecture Summary
+			</Label>
+		</View>
+		<View id="contentView">
+			<View id="calendarContainer">
+				<Label id="calendar">
+					Today
+				</Label>
+				<ImageView id="downArrow" />
+			</View>
+			<Label id="date">
+				Today, January 8th
+			</Label>
+			<Label id="count">
+				6
+			</Label>
+			<TableView id="table"/>
+		</View>
+		<!--
+		<View id="footerView">
+		<ImageView id="search" />
+		<ImageView id="list" />
+		</View>
+		-->
+	</Window>
+</Alloy>

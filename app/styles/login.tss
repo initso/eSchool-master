@@ -1,0 +1,107 @@
+'.loginContainer': {
+	height:'480dp',
+	width:'320dp'
+},
+
+'.loginContainer[formFactor=tablet]': {
+	top:'20dp'
+},
+
+'#logo': {
+	top:'70dp',
+    width:'252dp',
+    height:'186dp'
+},
+
+'#loginContents': {
+	layout:'vertical',
+	top:'200dp',
+	bottom:'10dp',
+	width:'250dp',
+	opacity:0
+},
+
+'#loginHelp': {
+	textAlign:'center',
+	font:{
+		fontSize:'14dp',
+		fontFamily:'Quicksand'
+	}
+},
+
+"#loginView": {
+	width: '80%',
+	height: '40%',
+	top: '20%',
+	backgroundColor: "#FFFFFF"
+}
+
+
+'#loginHelp[platform=android]': {
+	font:{
+		fontSize:'14dp',
+		fontFamily:'Quicksand-Regular'
+	}
+},
+
+'#emailWrapper': {
+	top:'10dp'
+},
+
+'#email': {
+	keyboardType:Ti.UI.KEYBOARD_EMAIL
+},
+
+'#passwordWrapper': {
+	top:'10dp'
+},
+
+'#password': {
+	passwordMask:true
+},
+
+'#buttonContainer': {
+	top:'10dp',
+	height:Ti.UI.SIZE
+},
+
+'#create': {
+	left:'-20dp',
+	width:'116dp',
+	height:'33dp',
+	backgroundImage:'/img/login/btn-create-default.png',
+	backgroundSelectedImage:'/img/login/btn-create-pressed.png',
+	opacity:0
+},
+
+'#login': {
+	right:'-20dp',
+	width:'116dp',
+	height:'33dp',
+	backgroundImage:'/img/login/btn-login-default.png',
+	backgroundSelectedImage:'/img/login/btn-login-pressed.png',
+	opacity:0
+},
+
+'#forgot': {
+	top:'20dp',
+	height:'44dp',
+	width:Ti.UI.SIZE
+},
+
+'#forgotText': {
+	color:'#000',
+	textAlign:'center',
+	height:Ti.UI.SIZE,
+	width:'125dp',
+	font:{
+		fontSize:'12dp'
+	}
+},
+
+'#underline': {
+	bottom:'14dp',
+	backgroundColor:'#000',
+	height:'1dp',
+	width:'125dp'
+}

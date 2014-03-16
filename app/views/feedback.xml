@@ -1,0 +1,12 @@
+<Alloy>
+	<View id="index">
+		<View id="header" class="appContent">
+			<Label id="headerLabel" textid="activityStream"/>
+			<View id="refresh">
+				<ImageView id="refreshIcon"/>
+			</View>
+			<View class="fauxShadow"/>
+		</View>
+		<TableView id="table"/>
+	</View>
+</Alloy>

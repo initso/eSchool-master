@@ -1,0 +1,43 @@
+"#homework[platform=android]" : {
+style:Ti.UI.Android.SWITCH_STYLE_CHECKBOX
+}
+
+"TextField": {
+width: 200,
+top: 10,
+borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE
+}
+
+"#submit": {
+top: 250
+}
+
+"#homework":{
+align: "left",
+top: 90
+}
+
+"#subject":{
+	width: Ti.UI.SIZE,
+height: Ti.UI.SIZE,
+color: "#000",
+top: 10
+}
+"#teacher":{
+width: Ti.UI.SIZE,
+height: Ti.UI.SIZE,
+color: "#000",
+top: 50
+}
+
+"TextArea":{
+borderWidth:"2",
+borderColor:"#bbb",
+borderRadius:"5",
+color:"#888",
+textAlign:"left",
+width:"300",
+height:"70",
+top: 170
+}

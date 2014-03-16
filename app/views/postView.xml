@@ -1,0 +1,9 @@
+<Alloy>
+	<View id="container">
+		<View id="backdrop"/>
+		<View id="tinyShadow"/>
+		<View id="postContainer" class="appContent">
+			<Require id="postFormView" src="postFormView"/>
+		</View>
+	</View>
+</Alloy>

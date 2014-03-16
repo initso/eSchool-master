@@ -1,0 +1,34 @@
+'#container': {
+	top:'45dp',
+	bottom:0,
+	backgroundColor:'#e4e7ea'
+},
+
+'#container[formFactor=tablet]': {
+	top:'43dp',
+	right:-364,
+	width:364
+},
+
+'#underline': {
+	backgroundColor:'#0574bf',
+	top:0,
+	height:'2dp'
+},
+
+'#close': {
+	left:0,
+	width:'44dp',
+	backgroundImage:'/img/general/vert-bar.png'
+},
+
+'#closeIcon': {
+	image:'/img/drawer/btn-close.png',
+	height:'18dp',
+	width:'18dp'
+},
+
+'#content[formFactor=tablet]': {
+	left:'44dp',
+	top:'2dp'
+}

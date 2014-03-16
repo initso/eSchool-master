@@ -1,0 +1,14 @@
+<Alloy>
+	<Tab id="tabHome">
+		<Window id="home">
+			<View class="container">
+				<ActivityIndicator id="activityIndicator" />
+				<Label id="labelHome" />
+				<TableView id="tableHome" />
+				<TableView id="tableHome2" />
+				<TableView id="tableHome3" />
+				<TableView id="tableHome4" />
+			</View>
+		</Window>
+	</Tab>
+</Alloy>

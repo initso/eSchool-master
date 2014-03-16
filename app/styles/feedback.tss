@@ -1,0 +1,37 @@
+'#header': {
+	top:'10dp',
+	left:'10dp',
+	right:'10dp',
+	height:'35dp'
+},
+
+'#headerLabel': {
+	color:'#373e47',
+	left:'10dp',
+	width:Ti.UI.SIZE,
+	height:Ti.UI.SIZE,
+	font: {
+		fontFamily:'Quicksand-Bold',
+		fontSize:'14dp'
+	}
+},
+
+'#refresh': {
+	width:'50dp',
+	right:0
+},
+
+'#refreshIcon': {
+	right:'10dp',
+	image:'/img/general/refresh.png',
+	height:'20dp',
+	width:'20dp'
+},
+
+'#table': {
+	top:'50dp',
+	left:'10dp',
+	bottom:0,
+	right:'10dp',
+	separatorStyle:Ti.UI.iPhone.TableViewSeparatorStyle.NONE
+}

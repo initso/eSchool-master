@@ -1,0 +1,8 @@
+"#tabEvents[platform=ios formFactor=handheld]": {
+    icon: 'images/4_collections_view_as_list.png'
+}
+'#win': {
+    backgroundColor: '#fff',
+    modal: false,
+    exitOnClose: true
+}
