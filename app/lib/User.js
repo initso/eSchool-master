@@ -1,6 +1,7 @@
 //dependencies
 var Cloud = require('ti.cloud'),
-	Gravitas = require('gravitas');
+	Gravitas = require('gravitas'),
+	AppData = require('data');
 	
 //Empty constructor (for now)
 function User() {}

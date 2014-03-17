@@ -1,6 +1,9 @@
 //
 // Frame / Typography
 //
+Window: {
+	navBarHidden:true,
+},
 
 'Window[platform=android]': {
 	windowSoftInputMode:Ti.UI.Android.SOFT_INPUT_ADJUST_RESIZE

@@ -80,8 +80,10 @@ $.postFormView.on('success', function() {
 });
 
 $.win.on('open', function() {
-
-	//$.postFormView.focus();
+	$.postFormView.focus();
+	$.postFormView.passParameters({
+		dataId: dataId
+	});
 });
 
 //Clean up - remember to remove global event handlers if you don't need them anymore!

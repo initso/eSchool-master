@@ -50,43 +50,8 @@ if (dataId !== '') {
 	$.detail.title = dataItem.title;
 	createForm(dataItem.subject, dataItem.teacher, "Enter your description here", false);
 
-	//
-	// Navigation
-	//
+	$.submit.addEventListener('click', function() {
+		AppData.updateSummary("IXA", "2014-03-08T00:00:00+0000", summary);
+	});
 
-	// Android
-	if (OS_ANDROID) {
-		$.detail.addEventListener('open', function() {
-			if ($.detail.activity) {
-				var activity = $.detail.activity;
-
-				// Action Bar
-				if (Ti.Platform.Android.API_LEVEL >= 11 && activity.actionBar) {
-					activity.actionBar.title = L('detail', 'Detail');
-					activity.actionBar.displayHomeAsUp = true;
-					activity.actionBar.onHomeIconItemSelected = function() {
-						$.detail.close();
-						$.detail = null;
-						Ti.App.fireEvent('dataUpdated');
-					};
-				}
-			}
-		});
-
-		// Back Button - not really necessary here - this is the default behaviour anyway?
-		$.detail.addEventListener('android:back', function() {
-			Ti.App.fireEvent('dataUpdated');
-			$.detail.close();
-			$.detail = null;
-		});
-
-		$.submit.addEventListener('click', function() {
-			AppData.updateSummary("IXA", "2014-03-08T00:00:00+0000", summary);
-		});
-	}
-
-	// iOS
-	// as detail was opened in the tabGroup, iOS will handle the nav itself (back button action and title)
-	// but we could change the iOS back button text:
-	//$.detail.backButtonTitle = L('backText', 'Back to List');
 }

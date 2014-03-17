@@ -63,6 +63,7 @@ function createRow(time, name, prof, i) {
 	return tableRow;
 }
 
+
 //
 // Present our data - wrap it in an event handler which we can trigger when we manipulate our data store
 // This eventListener is application-wide, but could be localised to this controller
@@ -107,7 +108,6 @@ Ti.App.addEventListener('dataUpdated', function(e) {
 		// Rather than passing the function directly as the 2nd arguement, pass a reference
 		// This allows it to be removed later: $.tableRecords.removeEventListener('click', tableClick);
 		$.tableRecords.addEventListener('click', tableClick);
-		$.tableRecords.addEventListener('longpress', tableLongPress);
 		$.activityIndicator.hide();
 	});
 });
@@ -135,96 +135,3 @@ function tableClick(e) {
 	w.openWindow();
 	$.list.close();
 }
-
-// Long clicks open the options menu, enabling us to view, delete, or cancel the row item
-function tableLongPress(e) {
-	var dataId = e.rowData.dataId;
-
-	var dialog = Ti.UI.createOptionDialog({
-		options : ['View', 'Delete', 'Cancel'],
-		cancel : 2,
-		destructive : 1,
-		persistent : false,
-		dataId : dataId
-	});
-
-	// Handle clicks on our dialog menu itself
-	dialog.addEventListener('click', function(e) {
-		var index = e.index;
-		var dataId = e.source.dataId;
-
-		// View option selected
-		if (dataId !== '' && index === 0) {
-			var detailController = Alloy.createController('detail', {
-				parentTab : $.list,
-				dataId : dataId
-			});
-			$.list.open(detailController.getView());
-		} else if (dataId !== '' && index === 1) {
-			// Delete option selected
-			// Checking for !== '' specifically as dataId in this case could be 0 - array key 1st position
-
-			AppData.deleteItem(dataId);
-			//Ti.App.fireEvent('dataUpdated');
-		}
-
-		// Tidy up our dialog
-		// Need to look into comparing performance of this approach (rebuilding dialog each time)
-		// Vs creating a single dialog and reusing it each time (changing the dataId)
-		dialog.hide();
-		dialog = null;
-	});
-
-	// Open it
-	dialog.show();
-}
-
-// Menu Clicks
-function openAddItem() {
-	// We aren't adding the function to add rows
-	// Otherwise this would open a "create" controller like how detail is created in dialog above
-	// Create would have a form, which if valid, push the data to an "AppData.addItem(dataObject);"
-	// And then close the window and trigger the redrawing of the data table
-	// $.create.close(); Ti.App.fireEvent('dataUpdated');
-	alert('Not Implemented');
-}
-
-//
-// Navigation
-//
-
-// Android
-if (OS_ANDROID) {
-	$.list.addEventListener('focus', function() {
-		if (Alloy.Globals.tabGroup.activity) {
-			var activity = Alloy.Globals.tabGroup.activity;
-
-			// Menu
-			activity.invalidateOptionsMenu();
-			activity.onCreateOptionsMenu = function(e) {
-				var menu = e.menu;
-				var menuItem1 = menu.add({
-					title : L('addItem', 'Add Item'),
-					// http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.Android.MenuItem
-					// Menu items can be all hidden, shown if space available, forced to show all times
-					showAsAction : Ti.Android.SHOW_AS_ACTION_NEVER
-				});
-				menuItem1.addEventListener('click', openAddItem);
-			};
-
-			// Action Bar
-			if (Alloy.Globals.Android.Api >= 11 && activity.actionBar) {
-				activity.actionBar.title = L('list', 'Todays Schedule');
-			}
-		}
-	});
-}
-
-// iOS
-if (OS_IOS) {
-	var btnRightNav = Ti.UI.createButton({
-		title : L('addItem', 'Add Item')
-	});
-	btnRightNav.addEventListener('click', openAddItem);
-	$.list.rightNavButton = btnRightNav;
-} 

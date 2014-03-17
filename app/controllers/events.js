@@ -1,7 +1,6 @@
 //
 // View Language
 //
-$.tabEvents.title = L('events', 'Events');
 
 // Taking Screen Width
 var screenWidth = 322;
