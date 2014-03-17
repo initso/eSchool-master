@@ -286,9 +286,9 @@ function getType(){
 }
 
 exports.getUserName = function() {
-	return userName;
+	return Ti.App.Properties.getString('userName');
 };
 
 exports.getUserType = function() {
-	return userType;
+	return Ti.App.Properties.getString('userType');
 };

@@ -108,7 +108,10 @@ Ti.App.addEventListener('dataUpdated', function(e) {
 		// Handle table clicks - either single click or longpress (holding button down then releasing)
 		// Rather than passing the function directly as the 2nd arguement, pass a reference
 		// This allows it to be removed later: $.tableRecords.removeEventListener('click', tableClick);
-		$.tableRecords.addEventListener('click', tableClick);
+		if(AppData.getUserType()=="Teacher"){
+			$.tableRecords.addEventListener('click', tableClick);
+		}
+
 		$.activityIndicator.hide();
 	});
 });
@@ -117,18 +120,13 @@ Ti.App.addEventListener('dataUpdated', function(e) {
 Ti.App.fireEvent('dataUpdated');
 // Either set the state for no records, or loop and add each item as a TableViewRow
 
+
 //
 // Action Handlers
 //
 // Table Clicks
 function tableClick(e) {
 	var dataId = e.rowData.dataId;
-
-	console.log(dataId);
-	// All single clicks are just going to open the detail window for this item
-	// We pass the tab object to the child controller so if it needed to open a window it has a reference to the parent tab in which to do so
-	// Rather than passing $.list as a controller arg, we could set: Alloy.Globals.list = $.list; outside of this function
-	// and have the child controller call: Alloy.Globals.list.open(someController.getView()) instead of parentTab.open(someController.getView())
 
 	var w = Alloy.createController('postWindow', {
 		dataId : dataId
