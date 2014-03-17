@@ -1,8 +1,5 @@
 /* Class Style */
 /* Window Container */
-".container": {
-	backgroundColor: "#F2F2F2",
-},
 // ".tableRowBackground": {
 	// width: Ti.UI.FILL,
 	// height: '61dp',
@@ -15,13 +12,19 @@
 	// bottom: '5dp',
 	// bakgroundColor: '#FFFFFF'
 // },
+"Label": {
+	color: "#000000",
+	font: {
+		fontSize: '14dp'
+	}	
+},
 ".subject": {
 	height: Ti.UI.SIZE,
 	width: Ti.UI.SIZE,
 	left: '8dp',
 	top: '5dp',
 	font: {
-		fontSize: 12,
+		fontSize: '14dp',
 		fontWeight: 'bold'
 	},
 	color: '#000000'
@@ -30,7 +33,7 @@
 	height: Ti.UI.SIZE,
 	width: Ti.UI.SIZE,
 	font: {
-		fontSize: 10
+		fontSize: 12
 	},
 	color: '#77933C'
 },
@@ -45,7 +48,7 @@
 	height: Ti.UI.SIZE,
 	width: Ti.UI.SIZE,
 	font: {
-		fontSize: 10
+		fontSize: 12
 	},
 	color: '#7F7F7F',
 	ellipsize: true
@@ -56,6 +59,13 @@
 	right: '8dp',
 	top: '5dp',
 	image: '/images/alert.png'
+},
+".rightImageHomework": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	right: '8dp',
+	top: '5dp',
+	image: '/images/homework.png'
 },
 
 /* UI element common styling */
@@ -105,24 +115,6 @@
 	height: Ti.UI.SIZE,
 	right: '8dp',
 	image: '/images/help.jpg'
-},
-
-/* Title View */
-"#titleView": {
-	width: Ti.UI.FILL,
-	height: '5%',
-	top: '5%',
-	backgroundColor: "#31859C"
-},
-"#title": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	font: {
-		fontSize: 16,
-		fontWeight: 'bold'
-	},
-	left: '5dp',
-	color: '#FFFFFF'
 },
 
 /* Content View : Lecture List */

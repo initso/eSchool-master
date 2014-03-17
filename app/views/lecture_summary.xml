@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container">
+	<Window class="container" id="lectureSummaryWin">
 		<View id="titleView">
 			<Label id="title">
 				Lecture Summary
@@ -18,7 +18,7 @@
 			<Label id="count">
 				6
 			</Label>
-			<TableView id="table"/>
+			<TableView id="table" onClick="actionLectureDetail"/>
 		</View>
 		<!--
 		<View id="footerView">

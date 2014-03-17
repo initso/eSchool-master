@@ -99,6 +99,20 @@ function createRow(subject, teacher, description, alerts, i) {
 	return tableRow;
 }
 
+// Lecture summary table click event - open Lecture Details Page
+function actionLectureDetail(e){
+	var dataId = e.index; 	//index of row that has been clicked
+
+	console.log(dataId);
+	
+	var win = Alloy.createController('lecture_detail', {
+		dataId : dataId
+	});
+	
+	win.openWindow();
+	$.lectureSummaryWin.close();
+}
+
 Ti.App.addEventListener('summaryUpdated', function(e) {
 	// Reset table if there are any existing rows (Alloy includes underscore)
 	if (! _.isEmpty($.table.data)) {
@@ -120,7 +134,6 @@ Ti.App.addEventListener('summaryUpdated', function(e) {
 		// Set the table data in one go rather than making repeated (costlier) calls on the loop
 		$.table.setData([]);
 		$.table.setData(recordData);
-
 	});
 });
 

@@ -2,7 +2,8 @@
 // Frame / Typography
 //
 Window: {
-	navBarHidden:true,
+	navBarHidden: true,
+	backgroundColor: "#F2F2F2"
 },
 
 'Window[platform=android]': {
@@ -81,7 +82,25 @@ TableView: {
 '.childArrow': {
 	image:'/img/general/btn-right-arrow.png',
 	right:'5dp'
-}
+},
+
+/* Title View */
+"#titleView": {
+	width: Ti.UI.FILL,
+	height: '5%',
+	top: '5%',
+	backgroundColor: "#31859C"
+},
+"#title": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: 16,
+		fontWeight: 'bold'
+	},
+	left: '5dp',
+	color: '#FFFFFF'
+},
 
 
 
@@ -97,30 +116,30 @@ TableView: {
     height: Ti.UI.SIZE,
     width: Ti.UI.SIZE,
     top: 20
-}
+},
 "#activityIndicator[platform=ios]": {
     style: Ti.UI.iPhone.ActivityIndicatorStyle.DARK
-}
+},
 "#activityIndicator[platform=android]": {
     style: Ti.UI.ActivityIndicatorStyle.PLAIN
-}
+},
 
 "#labelNoRecords": {
     height: Ti.UI.SIZE,
     width: Ti.UI.SIZE,
     visible: false,
     top: 20
-}
+},
 
 "#labelHome":{
 	height: Ti.UI.SIZE,
 	top: 0	
-}
+},
 
 
 "#tableRecords":{
     backgroundColor:'transparent'
-}
+},
 
 "#loginView": {
 	width: '80%',
@@ -128,6 +147,3 @@ TableView: {
 	top: '20%',
 	backgroundColor: "#FFFFFF"
 }
-
-
-

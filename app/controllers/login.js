@@ -83,6 +83,11 @@ $.init = function() {
 				opacity:1,
 				duration:250
 			});
+			$.create.animate({
+				left:0,
+				opacity:1,
+				duration:250
+			});
 		});
 	});
 };
