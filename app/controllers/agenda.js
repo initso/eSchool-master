@@ -91,10 +91,11 @@ Ti.App.addEventListener('dataUpdated', function(e) {
 			$.labelNoRecords.visible = true;
 		} else {
 			var recordData = [];
-						
+			console.log("here");
+			console.log(dataStore);			
 			for (var i = 0; i < dataStore.length; i++) {
 				var record = dataStore[i];
-				//console.log(dataStore[i]);
+				console.log(dataStore[i]);
 				// This doesn't need to be a row, it could just be an object
 				// http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.TableView
 				recordData.push(createRow(record.time, record.subject, record.teacher, i));

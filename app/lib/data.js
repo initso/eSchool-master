@@ -109,6 +109,12 @@ var summary_id = '';
 var teachesAt = ["IXA"];
 var className = '';
 
+
+exports.getToday=function(){
+	return dateStamp;
+};
+
+
 //TODO: Build this Datastore from the cloud
 
 //GET todays Schedule normal for Teachers
@@ -181,7 +187,7 @@ function updateDetails(teachesAt, dateStamp, updatedSummary) {
 	className = teachesAt + "pastLectures";
 	lectSummary(teachesAt, function() {
 		console.log("This is the summary:"+summary);
-		summary.push(updatedSummary.pop());
+		summary.push(updatedSummary[0]);
 		console.log(summary);
 		Cloud.Objects.update({
 			classname : className,
@@ -247,16 +253,15 @@ exports.getSummary = function(callback) {
 
 // GetAll
 exports.getAll = function(callback) {
-	console.log(userName);
-	if (userType == "Student") {
-		Schedule(userName, userType, ["IXA"], function() {
+	console.log(getUser());
+	if (getType() == "Student") {
+		Schedule(getUser(), getType(), ["IXA"], function() {
 			console.log("reTurning:" + dataStore);
 			callback(dataStore);
 		});
-	} else if (userType == "teacher") {
-		Schedule(userName, userType, ["IXA"], function() {
+	} else if (getType() == "teacher") {
+		Schedule(getUser(), getType(), ["IXA"], function() {
 			console.log("reTurning:" + teacherSchedule);
-
 			console.log("out loop:" + teacherSchedule);
 			callback(teacherSchedule);
 		});
@@ -271,6 +276,14 @@ exports.getTeacherSchedule = function() {
 		return teacherSchedule;
 	});
 };
+
+function getUser(){
+	return Ti.App.Properties.getString('userName');
+}
+
+function getType(){
+	return Ti.App.Properties.getString('userType');
+}
 
 exports.getUserName = function() {
 	return userName;

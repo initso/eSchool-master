@@ -102,12 +102,13 @@ $.deleteButton.on('click', function() {
 	});
 });
 
-//Manage social connection state
+//Home-work and Test
 var homeWork = false;
 $.facebook.on('click', function() {
 	$.facebook.backgroundImage = '/img/post/btn-facebook-on.png';
 	homeWork = true;
 });
+
 
 var test = false;
 $.twitter.on('click', function() {
@@ -140,8 +141,7 @@ $.submit.on('click', function() {
 		$.loading.start();
 
 		AppData.getAll(function(dataStore) {
-			console.log("TRIAL:"+dataStore+"   "+dataStore[0]);
-			
+			//console.log("TRIAL:"+dataStore+"   "+dataStore[0]);
 			var dataItem = dataStore[0];
 			var summary = [{
 				"timeStamp" : dataItem.time,
@@ -153,7 +153,8 @@ $.submit.on('click', function() {
 			}];
 				
 			var currentPost = $.post.value;
-			AppData.updateSummary("IXA", "2014-03-16T00:00:00+0000", summary);
+			var today=AppData.getToday();
+			AppData.updateSummary("IXA", today, summary);
 		});
 		$.loading.stop();
 		$.postContainer.remove($.loading.getView());	
