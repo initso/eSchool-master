@@ -6,34 +6,20 @@
 	left: '5dp'
 },
 
-".dropdownView": {
-	height: '25dp',
-	width: Ti.UI.SIZE,
-	top: "10dp", 
-	left: '30dp',  
-	layout: "horizontal"
-},
-"#downArrow": {
-	width: '10dp',
-	height: '8dp',
-	left: '3dp',
-	right: '5dp',
-	image: '/images/downArrow.png'
-},
-
 "TableView": {
-	left: '30dp',
-	right: '50dp',
+	left: '20dp',
+	right: '20dp',
 	top: '20dp',
 	borderColor: '#D9D9D9',
-	borderWidth: 1
+	borderWidth: 2,
+	height: Ti.UI.SIZE
 },
 
 "TableViewRow": {
-	height: '25dp', 
+	height: '50dp', 
 	backgroundColor: '#FFFFFF',
 	borderColor: '#D9D9D9',
-	borderWidth: 1
+	borderWidth: 2
 },
 "#contentView": {
 	width: Ti.UI.FILL,

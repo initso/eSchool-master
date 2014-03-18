@@ -6,39 +6,39 @@ function createFeedsRow(teacher, feedback, i) {
 		dataId : i,
 		className : 'row',
 		objName : 'row',
-		height : Alloy.Globals.Styles.TableViewRow.height,
-
+//		height : Alloy.Globals.Styles.TableViewRow.height,
+		height: '60dp', 
+		backgroundColor: '#FFFFFF',
+		borderColor: '#D9D9D9',
+		borderWidth: 2
 	});
 
-	// Create Table Row Columns
-	var teacherName = Ti.UI.createView({
-		left : 0,
-		width : "40%",
-		height : Ti.UI.Size
+	// Create Table Row elements
+	var teacherName = Ti.UI.createLabel({
+		text: teacher,
+		height: Ti.UI.SIZE,
+		width: Ti.UI.SIZE,
+		left: '8dp',
+		top: '5dp',
+		font: {
+			fontSize: '12dp',
+			fontWeight: 'bold'
+		},
+		color: '#77933C'
 	});
-	var feedback = Ti.UI.createView({
-		left : "40%",
-		width : "60%",
-		height : Ti.UI.Size
+	var feedback = Ti.UI.createLabel({
+		text: feedback,
+		top: '24dp',
+		height: Ti.UI.SIZE,
+		left: '8dp',
+		right: '8dp',
+		width: Ti.UI.SIZE,
+		font: {
+			fontSize: 12
+		},
+		color: '#7F7F7F',
+		ellipsize: true
 	});
-
-	// Create Table Row Column Labels
-	teacherName.add(Ti.UI.createLabel({
-		top : 5,
-		right : 5,
-		bottom : 5,
-		left : 5,
-		text : teacher,
-		color : '#000'
-	}));
-	feedback.add(Ti.UI.createLabel({
-		top : 5,
-		right : 5,
-		bottom : 5,
-		left : 5,
-		text : feedback,
-		color : '#000'
-	}));
 
 	// Add Columns To Table Row
 	tableRow.add(teacherName);
