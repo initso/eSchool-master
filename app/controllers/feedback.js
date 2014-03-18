@@ -195,10 +195,10 @@ function selectedStudent(e) {
 }
 
 if (AppData.getUserType() == "Teacher") {
-	$.studentFeedbackWin.close();
 	$.teacherFeedbackWin.open({
 		modal : true
 	});
+	$.studentFeedbackWin.close();
 	console.log("y is it here?");
 
 } else {

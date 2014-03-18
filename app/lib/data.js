@@ -183,7 +183,10 @@ function lectSummary(teachesAt, dateStamp, callback) {
 }
 
 
-function Feedback(userName, className){
+function Feedback(userName, className, callback){
+	console.log(userName);
+	console.log(className);
+	
 	Cloud.Objects.query({
 		classname : className,
 		page : 1,
@@ -196,7 +199,9 @@ function Feedback(userName, className){
 			console.log("Hello World");
 			for (var i = 0; i < e[className].length; i++) {
 				var timetable = e[className][i];
+				console.log(timetable);
 				feedback = timetable.feedback;
+				console.log(feedback);
 				feedback_id=timetable.id;
 			}
 			callback();
@@ -323,7 +328,7 @@ exports.getSummary = function(className, dateStamp,callback) {
 };
 
 exports.getFeedback = function(userName,className, callback) {
-	Feedback(className, dateStamp, function() {
+	Feedback(userName, className, function() {
 		console.log("reTurning:" + feedback);
 		callback(feedback);
 	});
