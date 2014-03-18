@@ -16,7 +16,7 @@ function createFeedsRow(teacher, feedback, i) {
 		width : "40%",
 		height : Ti.UI.Size
 	});
-	var feedback = Ti.UI.createView({
+	var feedbackView = Ti.UI.createView({
 		left : "40%",
 		width : "60%",
 		height : Ti.UI.Size
@@ -31,7 +31,7 @@ function createFeedsRow(teacher, feedback, i) {
 		text : teacher,
 		color : '#000'
 	}));
-	feedback.add(Ti.UI.createLabel({
+	feedbackView.add(Ti.UI.createLabel({
 		top : 5,
 		right : 5,
 		bottom : 5,
@@ -42,10 +42,10 @@ function createFeedsRow(teacher, feedback, i) {
 
 	// Add Columns To Table Row
 	tableRow.add(teacherName);
-	tableRow.add(feedback);
+	tableRow.add(feedbackView);
 
 	// Resource Clean-Up
-	teacherName = feedback = null;
+	teacherName = feedbackView = null;
 
 	// Finished
 	return tableRow;
