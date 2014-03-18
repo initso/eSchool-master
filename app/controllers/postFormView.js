@@ -19,8 +19,7 @@ $.focus = function() {
 
 var dataID = '';
 var parentTab = '';
-$.passParameters = function(arguments) {
-	var args = arguments[0] || {};
+$.passParameters = function(args) {
 	dataID = (args.dataId === 0 || args.dataId > 0) ? args.dataId : '';
 	parentTab = args.parentTab || '';
 	console.log("PARENT TAB IS::::::"+ parentTab);
@@ -154,14 +153,13 @@ $.submit.on('click', function() {
 				"teacher" : AppData.getUserName(),
 				"feedback" : $.post.value
 			}];
-			User.searchStudents(classStack[e.index], "Student", function(students) {
+			User.searchStudents("IXA", "Student", function(students) {
 				AppData.sendFeedback("Feedback", students[dataID].username, feedback);
 			});
 		} else {
-
 			AppData.getAll(function(dataStore) {
 				console.log("TRIAL:" + dataStore + "   " + dataStore[0]);
-				var dataItem = dataStore[0];
+				var dataItem = dataStore[dataID];
 				var summary = [{
 					"timeStamp" : dataItem.time,
 					"subject" : dataItem.subject,
