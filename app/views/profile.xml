@@ -1,0 +1,19 @@
+<Alloy>
+	<View id="index" class="container">
+		<View id="header" class="appContent">
+			<Label id="myProfile" textid="myProfile"/>
+			<View class="fauxShadow"/>
+		</View>
+		
+		<Button id="logout"/>
+		
+		<View id="personal" class="appContent">
+			<ImageView id="avatar"/>
+			<Label id="name"/>
+			<Label id="email"/>
+			<Label id="title"/>	
+			<Label id="org"/>
+			<View class="fauxShadow"/>	
+		</View>
+	</View>
+</Alloy>

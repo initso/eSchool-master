@@ -1,8 +1,7 @@
 var Cloud = require('ti.cloud');
 
 //DateStamp generator to store lecture details
-function dateStampGen() {
-	var today = new Date();
+function dateStampGen(today) {
 	var dd = today.getDate();
 	var mm = today.getMonth() + 1;
 	//January is 0!
@@ -102,16 +101,18 @@ exports.logout = function(callback) {
 //
 var today = gettDay();
 var dataStore = [];
-var dateStamp = dateStampGen();
+var dateStamp = dateStampGen(new Date());
 var teacherSchedule = [];
 var summary = [];
+var feedback = [];
 var summary_id = '';
+var feedback_id='';
 var teachesAt = ["IXA"];
 var className = '';
 
 
-exports.getToday=function(){
-	return dateStamp;
+exports.getToday=function(date){
+	return dateStampGen(date);
 };
 
 
@@ -156,7 +157,7 @@ function Schedule(user, type, teachesAt, callback) {
 }
 
 //GET Lecture Summary
-function lectSummary(teachesAt, callback) {
+function lectSummary(teachesAt, dateStamp, callback) {
 	className = teachesAt + "pastLectures";
 	console.log(className);
 	Cloud.Objects.query({
@@ -181,11 +182,35 @@ function lectSummary(teachesAt, callback) {
 	});
 }
 
+
+function Feedback(userName, className){
+	Cloud.Objects.query({
+		classname : className,
+		page : 1,
+		per_page : 10,
+		where : {
+			"username" : userName
+		}
+	}, function(e) {
+		if (e.success) {
+			console.log("Hello World");
+			for (var i = 0; i < e[className].length; i++) {
+				var timetable = e[className][i];
+				feedback = timetable.feedback;
+				feedback_id=timetable.id;
+			}
+			callback();
+		} else {
+			alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+		}
+	});	
+}
+
 //Get Id from Lecture Summary for this date
 //Insert Lecture Summary from Todays Schedule
 function updateDetails(teachesAt, dateStamp, updatedSummary) {
 	className = teachesAt + "pastLectures";
-	lectSummary(teachesAt, function() {
+	lectSummary(teachesAt, dateStamp, function() {
 		console.log("This is the summary:"+summary);
 		summary.push(updatedSummary[0]);
 		console.log(summary);
@@ -207,6 +232,48 @@ function updateDetails(teachesAt, dateStamp, updatedSummary) {
 		});
 
 	});
+}
+
+//Get Id from Lecture Summary for this date
+//Insert Lecture Summary from Todays Schedule
+function updateFeedback(className, userName, updatedFeedback) {
+	Feedback(userName, className, function() {
+		console.log("This is the summary:"+feedback);
+		feedback.push(updatedFeedback[0]);
+		console.log(feedback);
+		Cloud.Objects.update({
+			classname : className,
+			id : feedback_id,
+			fields : {
+				feedback : feedback
+			}
+		}, function(e) {
+			if (e.success) {
+				alert('Successful submitted the feedback');
+			} else {
+				createFeedback(className, userName, updatedFeedback);
+				//alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+			}
+		});
+
+	});
+}
+
+function createFeedback(className, userName, updatedFeedback){
+	Cloud.Objects.create({
+    classname: className,
+    fields: {
+		username: userName,
+		feedback : updatedFeedback
+    }
+}, function (e) {
+    if (e.success) {
+        alert('Successful!');
+    } else {
+        alert('Error:\n' +
+            ((e.error && e.message) || JSON.stringify(e)));
+    }
+});
 }
 
 function createLectSummary(teachesAt, dateStamp, updatedSummary){
@@ -238,18 +305,31 @@ exports.updateSummary = function(className, dateStamp, summary) {
 	updateDetails(className, dateStamp, summary);
 };
 
+exports.sendFeedback= function(className, userName, feedback){
+	updateFeedback(className, userName, feedback);
+};
+
 // Get
 exports.getItem = function(id) {
 	return dataStore[id];
 };
 
 //Get Summary of Lectures for a day
-exports.getSummary = function(callback) {
-	lectSummary("IXA", function() {
+exports.getSummary = function(className, dateStamp,callback) {
+	lectSummary(className, dateStamp, function() {
 		console.log("reTurning:" + summary);
 		callback(summary);
 	});
 };
+
+exports.getFeedback = function(userName,className, callback) {
+	Feedback(className, dateStamp, function() {
+		console.log("reTurning:" + feedback);
+		callback(feedback);
+	});
+};
+
+
 
 // GetAll
 exports.getAll = function(callback) {

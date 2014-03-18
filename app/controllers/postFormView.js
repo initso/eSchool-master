@@ -18,10 +18,17 @@ $.focus = function() {
 };
 
 var dataID = '';
+var parentTab='';
 $.passParameters = function(arguments) {
 	var args = arguments[0] || {};
 	dataID = (args.dataId === 0 || args.dataId > 0) ? args.dataId : '';
+	parentTab = args.parentTab;
 };
+
+if (parentTab == "Feedback") {
+	$.twitter.hide();
+	$.facebook.hide();
+}
 
 $.blur = function() {
 	$.post.blur();
@@ -109,7 +116,6 @@ $.facebook.on('click', function() {
 	homeWork = true;
 });
 
-
 var test = false;
 $.twitter.on('click', function() {
 	$.twitter.backgroundImage = '/img/post/btn-twitter-on.png';
@@ -140,24 +146,36 @@ $.submit.on('click', function() {
 		$.postContainer.add($.loading.getView());
 		$.loading.start();
 
-		AppData.getAll(function(dataStore) {
-			//console.log("TRIAL:"+dataStore+"   "+dataStore[0]);
-			var dataItem = dataStore[0];
-			var summary = [{
-				"timeStamp" : dataItem.time,
-				"subject" : dataItem.subject,
-				"title" : "World War 2",
-				"description" : $.post.value,
-				"teacher" : dataItem.teacher,
-				"homework" : homeWork
+		if (parentTab == "Schedule") {
+			AppData.getAll(function(dataStore) {
+				console.log("TRIAL:"+dataStore+"   "+dataStore[0]);
+				var dataItem = dataStore[0];
+				var summary = [{
+					"timeStamp" : dataItem.time,
+					"subject" : dataItem.subject,
+					"title" : "World War 2",
+					"description" : $.post.value,
+					"teacher" : dataItem.teacher,
+					"homework" : homeWork
+				}];
+
+				var currentPost = $.post.value;
+				var today = AppData.getToday();
+				AppData.updateSummary("IXA", today, summary);
+			});
+		}else if(parentTab == "Feedback"){	
+			
+			console.log("WTFFF");
+			var feedback = [{
+				"teacher" : AppData.getUser(),
+				"feedback" : $.post.value
 			}];
-				
-			var currentPost = $.post.value;
-			var today=AppData.getToday();
-			AppData.updateSummary("IXA", today, summary);
-		});
+			User.searchStudents(classStack[e.index], "Student", function(students) {	
+				AppData.sendFeedback("Feedback", students[dataID].username, feedback);
+			});			
+		}
 		$.loading.stop();
-		$.postContainer.remove($.loading.getView());	
+		$.postContainer.remove($.loading.getView());
 	}
 });
 

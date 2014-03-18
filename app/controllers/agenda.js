@@ -129,7 +129,8 @@ function tableClick(e) {
 	var dataId = e.rowData.dataId;
 
 	var w = Alloy.createController('postWindow', {
-		dataId : dataId
+		dataId : dataId,
+		parentTab: "Schedule"
 	});
 	w.openWindow();
 	$.list.close();

@@ -1,3 +1,6 @@
+var AppData= require('data');
+
+
 //
 // Check for expected controller args
 //
@@ -79,15 +82,9 @@ function createRow(subject, teacher, description, alerts, i) {
 		id : 'description2'
 	});
 
-	var description2Label = Ti.UI.createLabel({
-		text : "cycle or the H2O cycle, describes the continuous movement of water on, above and below the surface of the Earth."
-	});
-
-	description2Label.applyProperties(style5);
 
 	tabRow.add(view1);
 	tabRow.add(lectureDetail);
-	tabRow.add(description2Label);
 
 	tabBackRow.add(tabRow);
 	tableRow.add(tabBackRow);
@@ -99,16 +96,50 @@ function createRow(subject, teacher, description, alerts, i) {
 	return tableRow;
 }
 
+function actionDatePick(e) {
+	var picker = Ti.UI.createPicker({
+		type : Ti.UI.PICKER_TYPE_DATE,
+		minDate : new Date(2009, 0, 1),
+		maxDate : new Date(2014, 11, 31),
+		value : new Date()
+	});
+
+	if (Ti.Platform.osname === 'android') {
+		picker.showDatePickerDialog({
+			value : new Date(),
+			callback : function(e) {
+				if (e.cancel) {
+					Ti.API.info('User canceled dialog');
+				} else {
+					$.date.text= AppData.getToday(e.value);
+					Ti.API.info('User selected date: ' + e.value);
+					Ti.App.fireEvent('summaryUpdated'); 
+				}
+			}
+		});
+	} else {
+		picker.top = '50dp';
+		$.lectureSummaryWin.add(picker);
+		picker.addEventListener('change', function(e) {
+			Ti.API.info("User selected date: " + e.value.toLocaleString());
+			$.lectureSummaryWin.remove(picker);
+		});
+	}
+	
+}
+
 // Lecture summary table click event - open Lecture Details Page
-function actionLectureDetail(e){
-	var dataId = e.index; 	//index of row that has been clicked
+function actionLectureDetail(e) {
+	var dataId = e.index;
+	//index of row that has been clicked
 
 	console.log(dataId);
-	
+
 	var win = Alloy.createController('lecture_detail', {
-		dataId : dataId
+		dataId : dataId,
+		dateStamp: $.date.text
 	});
-	
+
 	win.openWindow();
 	$.lectureSummaryWin.close();
 }
@@ -117,12 +148,13 @@ Ti.App.addEventListener('summaryUpdated', function(e) {
 	// Reset table if there are any existing rows (Alloy includes underscore)
 	if (! _.isEmpty($.table.data)) {
 		$.table.data = [];
-		// $.table.removeEventListener('click', tableClick);
+		//$.table.removeEventListener('click', actionLectureDetail);
 		// $.table.removeEventListener('longpress', tableLongPress);
 	}
-	var AppData = require('data');
-	AppData.getSummary(function(dataStore) {
-
+	var dateStamp= $.date.text;
+	console.log(dateStamp);
+	AppData.getSummary("IXA", dateStamp, function(dataStore) {
+		
 		var recordData = [];
 		for (var i = 0; i < dataStore.length; i++) {
 			var record = dataStore[i];
@@ -134,7 +166,10 @@ Ti.App.addEventListener('summaryUpdated', function(e) {
 		// Set the table data in one go rather than making repeated (costlier) calls on the loop
 		$.table.setData([]);
 		$.table.setData(recordData);
+		$.count.text=dataStore.length;
 	});
 });
 
-Ti.App.fireEvent('summaryUpdated');
+
+$.date.text=AppData.getToday(new Date());
+Ti.App.fireEvent('summaryUpdated'); 

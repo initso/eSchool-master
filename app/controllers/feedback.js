@@ -1,133 +1,207 @@
-var ui = require('ui'),
-	Status = require('Status');
+var args = arguments[0] || {};
+var AppData = require('data'), User = require('User');
+
+Ti.App.addEventListener('feedbackUpdated', function(e) {
+	console.log("hi");
+	console.log("hi");
+	console.log("hi");
 	
-$.loading = Alloy.createController('loading');
-$.index.add($.loading.getView());
-
-function loadRows() {
-	if (OS_ANDROID) {
-		$.table.setData([
-			{title:L('loadingLatest'), color:'#000'}
-		]);
-	}
-	Status.query(function(e) {
-		$.loading.stop();
-		$.index.remove($.loading.getView());
-		if (e.success) {
-			var td = [];
-			for (var i = 0, l = e.statuses.length; i<l; i++) {
-				var status = e.statuses[i];
-				if (status.photo && !status.photo.processed) continue;
-				td.push(new ui.StatusRow(status));
-			}
-			$.table.setData(td);
-		}
-		else {
-			ui.alert('networkGenericErrorTitle', 'activityStreamError');
-		}
-	},30);
-}
-
-function startRefresh() {
-	$.index.add($.loading.getView());
-	$.loading.start();
-	loadRows();
-}
-
-//Listen for status update, and refresh.
-Ti.App.addEventListener('app:status.update', startRefresh);
-
-//Fire manually when this view receives "focus"
-$.on('focus', startRefresh);
-
-//Refresh when requested
-$.refresh.on('click', startRefresh);
-
-//Show a detail view for rows with an image
-$.table.on('click', function(e) {
-	var statusObject;
-	
-	if (OS_IOS) {
-		statusObject = e.rowData.statusObject;
-	}
-	else {
-		//On android we have no row data, so we have to dig for it a bit - holy crap is this ridiculous, we'll fix this
-		if (e.source.statusObject) {
-			statusObject = e.source.statusObject;
-		}
-		else if (e.source.parent.statusObject) {
-			statusObject = e.source.parent.statusObject;
-		}
-		else if (e.source.parent.parent && e.source.parent.parent.statusObject) {
-			statusObject = e.source.parent.parent.statusObject;
-		}
-		else if (e.source.parent.parent.parent && e.source.parent.parent.parent.statusObject) {
-			statusObject = e.source.parent.parent.parent.statusObject;
-		}
+	// Reset table if there are any existing rows (Alloy includes underscore)
+	if (! _.isEmpty($.tableFeeds.data)) {
+		$.tableFeeds.data = [];
 	}
 	
-	if (statusObject.photo) {
-		var w = Ti.UI.createView({
-			top:'5dp',
-			left:'5dp',
-			right:'5dp',
-			bottom:'5dp'
-		});
-		
-		var close = Ti.UI.createImageView({
-			image:'/img/post/close.png',
-			top:0,
-			left:0,
-			zIndex:999
-		});
-		w.add(close);
-		
-		var container = Ti.UI.createView({
-			backgroundColor:'#000',
-			top:'10dp',
-			left:'10dp',
-			right:'10dp',
-			bottom:'10dp'
-		});
-		w.add(container);
-		
-		if (OS_IOS) {
-			var scroll = Ti.UI.createScrollView({
-				contentHeight:'auto',
-				contentWidth:'auto',
-				maxZoomScale:5,
-				minZoomScale:0.75
-			});
-			scroll.add(Ti.UI.createImageView({
-				image:statusObject.photo.urls.medium_640
-			}));
-			container.add(scroll);
+	AppData.getFeedback("Feedback", AppData.getUserName(), function(feedback) {
+		var recordData = [];
+		for (var i = 0; i < feedback.length; i++) {
+			var record = feedback[i];
+			console.log(feedback[i]);
+			// This doesn't need to be a row, it could just be an object
+			// http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.TableView
+			recordData.push(createFeedsRow(record.teacher, record.feedback, i));
 		}
-		else {
-			var web = Ti.UI.createWebView({
-				backgroundColor:'#000',
-				html:'<html style="width:1024px;height:1024px;"><body style="background-color:#000;width:1024px;;height:1024px;"><img src="'+ statusObject.photo.urls.medium_640 +'"/></body></html>',
-				scalesPageToFit:true
-			});
-			container.add(web);
-		}
-		
-		$.index.parent.parent.add(w);
-		
-		close.addEventListener('click', function() {
-			$.index.parent.parent.remove(w);
-			//force GC on constituent elements
-			w = null;
-			container = null;
-			web = null;
-			close = null;
-		});
-		
-		if (OS_ANDROID) {
-			Ti.UI.createNotification({
-				message:L('pinch'),
-				duration:Ti.UI.NOTIFICATION_DURATION_LONG
-			}).show();
-		}
-	}
+		// Set the table data in one go rather than making repeated (costlier) calls on the loop
+		$.tableFeeds.setData([]);
+		$.tableFeeds.setData(recordData);
+	});
 });
+
+
+
+//Table Generator
+function createRow(first_name, last_name, user_name, i) {
+	// Create Table Row
+
+	var tableRow = Ti.UI.createTableViewRow({
+		dataId : i,
+		className : 'row',
+		objName : 'row',
+		height : Alloy.Globals.Styles.TableViewRow.height,
+
+	});
+	// Create Table Row Columns
+	var fname = Ti.UI.createView({
+		left : 0,
+		width : "35%",
+		height : Ti.UI.Size
+	});
+	var lname = Ti.UI.createView({
+		left : "35%",
+		width : "35%",
+		height : Ti.UI.Size
+	});
+	var username = Ti.UI.createView({
+		left : "70%",
+		width : "30%",
+		height : Ti.UI.Size
+	});
+
+	// Create Table Row Column Labels
+	fname.add(Ti.UI.createLabel({
+		top : 5,
+		right : 5,
+		bottom : 5,
+		left : 5,
+		text : first_name,
+		color : '#000'
+	}));
+	lname.add(Ti.UI.createLabel({
+		top : 5,
+		right : 5,
+		bottom : 5,
+		left : 5,
+		text : last_name,
+		color : '#000'
+	}));
+	username.add(Ti.UI.createLabel({
+		top : 5,
+		right : 5,
+		bottom : 5,
+		left : 5,
+		text : user_name,
+		color : '#000'
+	}));
+
+	// Add Columns To Table Row
+	tableRow.add(fname);
+	tableRow.add(lname);
+	tableRow.add(username);
+
+	// Resource Clean-Up
+	fname = lname = username = null;
+
+	// Finished
+	return tableRow;
+
+}
+
+function createFeedsRow(teacher, feedback, i) {
+	// Create Table Row
+	var tableRow = Ti.UI.createTableViewRow({
+		dataId : i,
+		className : 'row',
+		objName : 'row',
+		height : Alloy.Globals.Styles.TableViewRow.height,
+
+	});
+
+	// Create Table Row Columns
+	var teacherName = Ti.UI.createView({
+		left : 0,
+		width : "40%",
+		height : Ti.UI.Size
+	});
+	var feedback = Ti.UI.createView({
+		left : "40%",
+		width : "60%",
+		height : Ti.UI.Size
+	});
+
+	// Create Table Row Column Labels
+	teacherName.add(Ti.UI.createLabel({
+		top : 5,
+		right : 5,
+		bottom : 5,
+		left : 5,
+		text : teacher,
+		color : '#000'
+	}));
+	feedback.add(Ti.UI.createLabel({
+		top : 5,
+		right : 5,
+		bottom : 5,
+		left : 5,
+		text : feedback,
+		color : '#000'
+	}));
+
+	// Add Columns To Table Row
+	tableRow.add(teacherName);
+	tableRow.add(feedback);
+
+	// Resource Clean-Up
+	teacherName = feedback = null;
+
+	// Finished
+	return tableRow;
+
+}
+
+//Example class selected is IXA.
+function actionDropdown(e) {
+	var classStack = ["IXA"];
+	var opts = {
+		cancel : 2,
+		options : classStack,
+		selectedIndex : 0,
+		destructive : 0,
+		title : 'Select Class Room'
+	};
+
+	var dialog = Ti.UI.createOptionDialog(opts);
+	dialog.show();
+	dialog.addEventListener("click", function(e) {
+		dialog.hide();
+		console.log(classStack[e.index]);
+		if (! _.isEmpty($.studentListTable.data)) {
+			$.studentListTable.data = [];
+		}
+		User.searchStudents(classStack[e.index], "Student", function(students) {
+			var recordData = [];
+			for (var i = 0; i < students.length; i++) {
+				var record = students[i];
+				console.log(students[i]);
+				// This doesn't need to be a row, it could just be an object
+				// http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.TableView
+				recordData.push(createRow(record.username, record.first_name, record.last_name, i));
+			}
+			// Set the table data in one go rather than making repeated (costlier) calls on the loop
+			$.studentListTable.setData([]);
+			$.studentListTable.setData(recordData);
+			$.studentListTable.addEventListener('click', selectedStudent);
+		});
+	});
+}
+
+function selectedStudent(e) {
+	var dataId = e.rowData.dataId;
+
+	var w = Alloy.createController('postWindow', {
+		dataId : dataId,
+		parentTab : "Feedback"
+	});
+	w.openWindow();
+	$.teacherFeedbackWin.close();
+}
+
+if (AppData.getUserType() == "Teacher") {
+	$.studentFeedbackWin.close();
+	$.teacherFeedbackWin.open({
+		modal : true
+	});
+	console.log("y is it here?");
+
+} else {
+	console.log("y not here?");
+	Ti.App.fireEvent('feedbackUpdated');
+}

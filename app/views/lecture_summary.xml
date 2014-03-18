@@ -1,23 +1,14 @@
 <Alloy>
 	<Window class="container" id="lectureSummaryWin">
 		<View id="titleView">
-			<Label id="title">
-				Lecture Summary
-			</Label>
+			<Label id="title">Lecture Summary</Label>
 		</View>
 		<View id="contentView">
 			<View id="calendarContainer">
-				<Label id="calendar">
-					Today
-				</Label>
-				<ImageView id="downArrow" />
+				<Label id="date"/>
+				<ImageView id="downArrow" onClick="actionDatePick"/>
 			</View>
-			<Label id="date">
-				Today, January 8th
-			</Label>
-			<Label id="count">
-				6
-			</Label>
+			<Label id="count"/>
 			<TableView id="table" onClick="actionLectureDetail"/>
 		</View>
 		<!--
