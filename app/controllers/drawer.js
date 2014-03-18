@@ -2,7 +2,7 @@ var drawerWidth = 364; //tablet width scalar
 
 //Set drawer width to  platform width for small form
 if (!Alloy.isTablet) {
-	drawerWidth = Ti.Platform.displayCaps.platformWidth/1.5;
+	drawerWidth = Ti.UI.FILL;
 	$.container.width = drawerWidth;
 	$.container.right = drawerWidth*-1;
 }
