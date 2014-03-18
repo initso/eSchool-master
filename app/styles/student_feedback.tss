@@ -1,0 +1,45 @@
+"Label": {
+	color: "#000000",
+	font: {
+		fontSize: '14dp'
+	},	
+	left: '5dp'
+},
+
+".dropdownView": {
+	height: '25dp',
+	width: Ti.UI.SIZE,
+	top: "10dp", 
+	left: '30dp',  
+	layout: "horizontal"
+},
+"#downArrow": {
+	width: '10dp',
+	height: '8dp',
+	left: '3dp',
+	right: '5dp',
+	image: '/images/downArrow.png'
+},
+
+"TableView": {
+	left: '30dp',
+	right: '50dp',
+	top: '20dp',
+	borderColor: '#D9D9D9',
+	borderWidth: 1
+},
+
+"TableViewRow": {
+	height: '25dp', 
+	backgroundColor: '#FFFFFF',
+	borderColor: '#D9D9D9',
+	borderWidth: 1
+},
+"#contentView": {
+	width: Ti.UI.FILL,
+	height: '85%',
+	top: '10%',
+	left: '10dp',
+	right: '5dp',
+	backgroundColor: "transparent"
+}

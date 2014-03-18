@@ -1,7 +1,7 @@
 var AppData = require('data');
 var args = arguments[0] || {};
 var dataId = (args.dataId === 0 || args.dataId > 0) ? args.dataId : '';
-var parentTab= args.parentTab;
+var parentTab = args.parentTab || '';
 
 console.log(parentTab);
 if(!dataId)

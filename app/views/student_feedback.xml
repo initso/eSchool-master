@@ -1,0 +1,10 @@
+<Alloy>
+	<View id="studentFeedbackWin">
+		<View id="titleView">
+			<Label id="title">Student Feedbacks</Label>
+		</View>
+		<View id="contentView">
+			<TableView id="tableFeeds"/>
+		</View>
+	</View>
+</Alloy>

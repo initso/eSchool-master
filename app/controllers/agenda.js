@@ -75,7 +75,6 @@ Ti.App.addEventListener('dataUpdated', function(e) {
 	if (! _.isEmpty($.tableRecords.data)) {
 		$.tableRecords.data = [];
 		$.tableRecords.removeEventListener('click', tableClick);
-		$.tableRecords.removeEventListener('longpress', tableLongPress);
 	}
 
 	// Set loading state
@@ -105,10 +104,11 @@ Ti.App.addEventListener('dataUpdated', function(e) {
 			$.tableRecords.setData(recordData);
 		}
 
+
 		// Handle table clicks - either single click or longpress (holding button down then releasing)
 		// Rather than passing the function directly as the 2nd arguement, pass a reference
 		// This allows it to be removed later: $.tableRecords.removeEventListener('click', tableClick);
-		if(AppData.getUserType()=="Teacher"){
+		if(AppData.getUserType()=="teacher"){
 			$.tableRecords.addEventListener('click', tableClick);
 		}
 
@@ -126,6 +126,8 @@ Ti.App.fireEvent('dataUpdated');
 //
 // Table Clicks
 function tableClick(e) {
+
+	console.log("clicked");
 	var dataId = e.rowData.dataId;
 
 	var w = Alloy.createController('postWindow', {

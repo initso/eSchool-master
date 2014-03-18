@@ -1,5 +1,8 @@
 //Tabs are 20% of screen width for handheld
-var tabWidth = Ti.Platform.displayCaps.platformWidth/7.5;
+var platformWidth = Titanium.Platform.displayCaps.platformWidth;
+var dpi=Titanium.Platform.displayCaps.dpi;
+var tabWidth= (platformWidth*160)/(5*dpi);
+
 
 var tabPositions = {
 	home:0,

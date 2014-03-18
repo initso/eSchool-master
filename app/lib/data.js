@@ -34,67 +34,7 @@ function gettDay() {
 	return weekday[daytoday];
 }
 
-//TODO: Persistent Login
-//
-// Login stuff
-//
-var loggedIn = false;
-var userName = '';
-var userType = '';
 
-// Check for persisted login
-if (Ti.App.Properties.getString('loggedIn')) {
-	loggedIn = true;
-}
-
-if (Ti.App.Properties.getString('userName')) {
-	userName = Ti.App.Properties.getString('userName');
-}
-
-if (Ti.App.Properties.getString('userType')) {
-	userType = Ti.App.Properties.getString('userType');
-}
-
-exports.isLoggedIn = function() {
-	return loggedIn;
-};
-
-exports.login = function(username, password, callback) {
-	var Cloud = require('ti.cloud');
-
-	Cloud.Users.login({
-		login : username,
-		password : password
-	}, function(e) {
-		if (e.success) {
-			var user = e.users[0];
-
-			console.log(user.username);
-			console.log(user.custom_fields.type);
-			//Set User name and type for future in your local Data
-			userName = user.username;
-			userType = user.custom_fields.type;
-			loggedIn = true;
-			Ti.App.Properties.setString('loggedIn', 1);
-			Ti.App.Properties.setString('userName', user.username);
-			Ti.App.Properties.setString('userType', user.custom_fields.type);
-
-			callback({
-				result : 'ok'
-			});
-		} else {
-			callback((e.error && e.message) || JSON.stringify(e));
-		}
-	});
-};
-
-exports.logout = function(callback) {
-	loggedIn = false;
-	Ti.App.Properties.removeProperty('loggedIn');
-	callback({
-		result : 'ok'
-	});
-};
 
 //
 // App data and methods
@@ -197,6 +137,7 @@ function Feedback(userName, className, callback){
 	}, function(e) {
 		if (e.success) {
 			console.log("Hello World");
+			console.log(e);
 			for (var i = 0; i < e[className].length; i++) {
 				var timetable = e[className][i];
 				console.log(timetable);

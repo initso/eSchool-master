@@ -1,20 +1,4 @@
 <Alloy>
-	<Window id="studentFeedbackWin">
-		<View id="titleView">
-			<Label id="title">Student Feedbacks</Label>
-		</View>
-		<View id="contentView">
-			<TableView id="tableFeeds"/>
-		</View>
-	</Window>
-	<Window id="teacherFeedbackWin">
-		<View layout="vertical" height="Ti.UI.SIZE" top="0dp">
-			<View class="dropdownView" onClick="actionDropdown">
-				<Label>Class</Label>
-				<ImageView id="downArrow" left="5dp"/>
-			</View>
-	        
-	        <TableView id="studentListTable"/>
-		</View>
-	</Window>
+	<View id="feedback"/>
+
 </Alloy>
