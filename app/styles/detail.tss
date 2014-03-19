@@ -1,43 +1,21 @@
-"#homework[platform=android]" : {
-style:Ti.UI.Android.SWITCH_STYLE_CHECKBOX
-}
+Window: {
+	modal:true,
+	navBarHidden:true,
+	// layout: 'vertical'
+},
+'#header': {
+	backgroundImage:'/img/header/bg-title.png',
+	height:'45dp',
+	top:0
+},
 
-"TextField": {
-width: 200,
-top: 10,
-borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE
-}
+'#logo': {
+	height:'22dp',
+	width:'81dp'
+},
 
-"#submit": {
-top: 250
-}
-
-"#homework":{
-align: "left",
-top: 90
-}
-
-"#subject":{
-	width: Ti.UI.SIZE,
-height: Ti.UI.SIZE,
-color: "#000",
-top: 10
-}
-"#teacher":{
-width: Ti.UI.SIZE,
-height: Ti.UI.SIZE,
-color: "#000",
-top: 50
-}
-
-"TextArea":{
-borderWidth:"2",
-borderColor:"#bbb",
-borderRadius:"5",
-color:"#888",
-textAlign:"left",
-width:"300",
-height:"70",
-top: 170
+'#underline': {
+	backgroundColor:'#0574bf',
+	bottom:0,
+	height:'2dp'
 }

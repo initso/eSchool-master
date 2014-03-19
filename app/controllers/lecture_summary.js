@@ -135,7 +135,7 @@ function actionLectureDetail(e) {
 
 	console.log(dataId);
 
-	var win = Alloy.createController('lecture_detail', {
+	var win = Alloy.createController('detail', {
 		dataId : dataId,
 		dateStamp: $.date.text
 	});

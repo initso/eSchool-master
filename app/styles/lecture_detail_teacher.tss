@@ -1,0 +1,90 @@
+'#back': {
+	left:'10dp',
+	width:'50dp'
+},
+
+'#backImage': {
+	left:0,
+	width:'18dp',
+	height:'19dp',
+	image:'/img/general/btn-back.png'
+},
+
+'#postContainer': {
+	top:'50dp',
+	left:'5dp',
+	right:'5dp',
+	bottom:'5dp'
+},
+
+"Label": {
+	color: "#000000",
+	font: {
+		fontSize: '14dp'
+	}	
+},
+
+".heading": {
+	font: {
+		fontWeight: 'bold'
+	}	
+},
+
+/* Content View : Lecture List */
+"#contentView": {
+	width: Ti.UI.FILL,
+	height: '85%',
+	top: '10%',
+	left: '10dp',
+	right: '5dp',
+	backgroundColor: "transparent"
+},
+".linkLabel": {
+	left: '5dp',
+	color: '#558ED5',
+	font: {
+		fontSize: '12dp' 
+	}
+},
+".checkboxLabel": {
+	color: "#FDC539",
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	check: false,
+	font: {
+		fontSize: '12dp'
+	}
+},
+"Button": {
+	backgroundColor: "#4F81BD",
+	borderColor: "#395E8C",
+	backgroundImage: "None",
+	borderWidth: 2,
+	color: "#000000",
+	height: '30dp',
+	width: "100dp",
+	font: {
+		fontSize: '14dp',
+		fontWeight: 'bold'
+	}
+},
+"TextArea": {
+	backgroundColor: "#FFFFFF",
+	borderColor: "#DBDBDB",
+	borderWidth: 2,
+	font: {
+		fontSize: '12dp'
+	}
+},
+"TextField": {
+	backgroundColor: "#FFFFFF",
+	height: '30dp',
+	font: {
+		fontSize: '12dp'
+	}
+},
+"#timeLabel": {
+	font: {
+		fontSize: '12dp'
+	}
+}

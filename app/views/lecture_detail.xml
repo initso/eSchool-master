@@ -1,30 +1,21 @@
 <Alloy>
-	<Window id="lectureDetailWin">
-		<View id="header">
-			<View id="back">
-				<ImageView id="backImage"/>
-			</View>
-			<ImageView id="logo"/>
-			<View id="underline"/>
+	<View id="postContainer">
+		<View id="titleView">
+			<Label id="title"/>
 		</View>
-		<View id="postContainer">
-			<View id="titleView">
-				<Label id="title"/>
-			</View>
-			<View id="contentView">
-				<Label left="0dp" top="10dp">Teacher Name:</Label>
-				<Label id="teacherNameLabel" left="100dp" top="10dp"/>
-				<Label left="0dp" top="45dp" class="heading">Lecture Details:</Label>
-				<ScrollView top="85dp" layout="vertical">
-					<Label left="0dp" top="0dp" id="details"></Label>
-					<View  left="5dp" top="20dp" height=Ti.UI.SIZE width=Ti.UI.SIZE layout="horizontal">
-						<ImageView image="/images/attachment.png"></ImageView>
-						<Label id="attachmentLabel">Water Cycle</Label>
-					</View>
-					<Label left="0dp" top="20dp" class="heading">Lecture Timings:</Label>
-					<Label left="0dp" top="5dp" id="timings"></Label>
-				</ScrollView>
-			</View>
+		<View id="contentView">
+			<Label left="0dp" top="10dp">Teacher Name:</Label>
+			<Label id="teacherNameLabel" left="100dp" top="10dp"/>
+			<Label left="0dp" top="45dp" class="heading">Lecture Details:</Label>
+			<ScrollView top="85dp" layout="vertical">
+				<Label left="0dp" top="0dp" id="details"></Label>
+				<View  left="5dp" top="20dp" height=Ti.UI.SIZE width=Ti.UI.SIZE layout="horizontal">
+					<ImageView image="/images/attachment.png"></ImageView>
+					<Label id="attachmentLabel">Water Cycle</Label>
+				</View>
+				<Label left="0dp" top="20dp" class="heading">Lecture Timings:</Label>
+				<Label left="0dp" top="5dp" id="timings"></Label>
+			</ScrollView>
 		</View>
-	</Window>
+	</View>
 </Alloy>

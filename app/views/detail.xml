@@ -1,12 +1,11 @@
 <Alloy>
-	<Window id="detail">
-		<View>
-			<Label id="subject" />
-			<Label id= "teacher"/>
-			<TextArea id="description"/>
-			<Switch id="homework" text="Home work"/>
-			<Button id="submit" value="Submit"/>
+	<Window id="lectureDetailWin">	
+		<View id="header">
+			<View id="back">
+				<ImageView id="backImage" />
+			</View>
+			<ImageView id="logo" />
+			<View id="underline" />
 		</View>
-
 	</Window>
 </Alloy>

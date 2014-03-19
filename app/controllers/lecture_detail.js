@@ -5,22 +5,12 @@ var dateStamp= args.dateStamp;
 if(!dataId)
 	console.log("Form:"+dataId);
 
-$.back.on('click', function() {
-	$.lectureDetailWin.close();
-});
-
-$.openWindow = function() {
-	$.lectureDetailWin.open({
-		modal:true
-	});
-	
-	AppData.getSummary("IXA",dateStamp,function(dataStore) {
-		console.log(dataId);
-		var dataItem = dataStore[dataId];
-		console.log(dataStore[dataId]);
-		$.title.text=dataItem.title;
-		$.teacherNameLabel.text=dataItem.teacher;
-		$.details.text=dataItem.description;
-		$.timings.text=dataItem.timeStamp;	
-	});			
-};
+AppData.getSummary("IXA",dateStamp,function(dataStore) {
+	console.log(dataId);
+	var dataItem = dataStore[dataId];
+	console.log(dataStore[dataId]);
+	$.title.text=dataItem.title;
+	$.teacherNameLabel.text=dataItem.teacher;
+	$.details.text=dataItem.description;
+	$.timings.text=dataItem.timeStamp;	
+});	
