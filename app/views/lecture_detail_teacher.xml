@@ -3,11 +3,11 @@
 		<View id="titleView">
 			<Label id="title">Add Lecture Details</Label>
 		</View>
-		<ScrollView id="contentView">
+		<View id="contentView">
 			<Label left="0dp" top="10dp">Lecture Title:</Label>
 			<TextField id="teacherNameTextbox" left="100dp" top="10dp" maxLength=50/>
 			<Label left="0dp" top="45dp" class="heading">Lecture Details:</Label>
-			<Label right="0dp" top="45dp" id="timeLabel">9.00AM-10.00AM</Label>
+			<Label right="2dp" top="45dp" id="timeLabel">9.00AM-10.00AM</Label>
 			<TextArea top="75dp" left="0dp" right="5dp" height="150dp" maxLength=140 />
 			<View  left="5dp" top="235dp" height=Ti.UI.SIZE width=Ti.UI.SIZE layout="horizontal">
 				<ImageView image="/images/attachment.png"></ImageView>
@@ -27,6 +27,6 @@
 			<TextField top="345dp" left="110dp" width="200dp"/>
 			<Button id="saveBtn" bottom="5dp" right="115dp">Save</Button>
 			<Button id="cancelBtn" bottom="5dp" right="5dp">Cancel</Button>
-		</ScrollView>
+		</View>
 	</View>
 </Alloy>
