@@ -56,6 +56,9 @@
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
         <supports-screens android:anyDensity="false"/>
+        <manifest>
+	        <uses-permission android:name="android.permission.CAMERA" />
+	    </manifest>
     </android>
     <mobileweb>
         <precache/>
