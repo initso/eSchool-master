@@ -144,7 +144,7 @@
 },
 "#downArrow": {
 	width: '10dp',
-	height: '8dp',
+	height: '12dp',
 	left: '3dp',
 	image: '/images/downArrow.png'
 },
@@ -154,8 +154,8 @@
 	font: {
 		fontSize: 10
 	},
-	left: '8dp',
-	top: '30dp',
+	left: '3dp',
+	//top: '30dp',
 	color: '#559FE3'
 },
 "#count": {

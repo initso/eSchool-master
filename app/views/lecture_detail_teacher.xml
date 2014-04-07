@@ -16,7 +16,7 @@
 			</View>
 			<View id="contentView">
 				<Label left="0dp" top="10dp">Lecture Title:</Label>
-				<TextField id="title" left="100dp" top="10dp" maxLength=50/>
+				<TextField id="title" left="100dp" top="10dp" maxLength=50 width="200dp" color="#000000"/>
 				<Label left="0dp" top="45dp" class="heading">Lecture Details:</Label>
 				<Label right="2dp" top="45dp" id="timeLabel"/>
 				<TextArea top="75dp" left="0dp" right="5dp" height="150dp" maxLength=140 id="post"/>
@@ -24,9 +24,13 @@
 					<ImageView image="/images/attachment.png"></ImageView>
 					<Label id="attachmentLabel" class="linkLabel">Attachments</Label>
 				</View>
-				<View  left="50%" top="235dp" height=Ti.UI.SIZE width=Ti.UI.SIZE layout="horizontal">
+				<View  left="50%" top="235dp" height=Ti.UI.SIZE width=Ti.UI.SIZE layout="horizontal" id="camera">
 					<ImageView image="/images/camera.png"></ImageView>
-					<Label id="cameraLabel" class="linkLabel">Camera</Label>
+					<Label class="linkLabel">Camera</Label>
+				</View>
+				<View id="imagePreview">
+					<ImageView id="preview"/>
+					<ImageView id="deleteButton"/>
 				</View>
 				<ImageView image="/images/checked.png" left="5dp" top="280dp" onClick="actionHomeworkCheckbox"/>
 				<Label top="278dp" left="30dp" class="checkboxLabel">Homework</Label>

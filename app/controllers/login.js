@@ -45,8 +45,13 @@ if (OS_IOS) {
 	}
 }
 
-//Login using network creds
-$.login.on('click', function() {
+//if next on keyboard is pressed after password
+$.password.on('return', login);
+
+//Login using network credentials
+$.login.on('click', login);
+
+function login() {
 	$.index.parent.add($.loading.getView());
 	$.loading.start();
 	$.email.blur();
@@ -63,7 +68,7 @@ $.login.on('click', function() {
 		$.index.parent.remove($.loading.getView());
 		showError();
 	});
-});
+}
 
 
 //Public component API for initializing this view

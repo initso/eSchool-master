@@ -57,7 +57,7 @@ function actionTestCheckbox(e) {
 
 
 //Handle image attachment
-$.cameraLabel.on('click', function() {
+$.camera.on('click', function() {
 
 	//for now, need to disable "choose from gallery" for android
 	var options = [];
@@ -76,15 +76,16 @@ $.cameraLabel.on('click', function() {
 			success : function(e) {
 				currentBlob = e.media;
 				$.preview.image = currentBlob;
-				$.cameraLabel.animate({
+				$.camera.animate({
 					opacity : 0,
 					duration : 250
 				}, function() {
-					// $.imagePreview.visible = true;
-					// $.imagePreview.animate({
-						// opacity : 1,
-						// duration : 250
-					// });
+					 $.imagePreview.visible = true;
+					 $.camera.visible = false;
+					 $.imagePreview.animate({
+						 opacity : 1,
+						 duration : 250
+					 });
 					updateCount();
 				});
 			},
@@ -111,22 +112,23 @@ $.cameraLabel.on('click', function() {
 
 });
 
-// $.deleteButton.on('click', function() {
-	// $.imagePreview.animate({
-		// opacity : 0,
-		// duration : 250
-	// }, function() {
-		// $.cameraLabel.animate({
-			// opacity : 1,
-			// duration : 250
-		// }, function() {
-			// $.imagePreview.visible = false;
-			// $.preview.image = '';
-			// currentBlob = null;
-			// updateCount();
-		// });
-	// });
-// });
+ $.deleteButton.on('click', function() {
+	 $.imagePreview.animate({
+		 opacity : 0,
+		 duration : 250
+	 }, function() {
+		 $.camera.visible = true;
+		 $.camera.animate({
+			 opacity : 1,
+			 duration : 250
+		 }, function() {
+			 $.imagePreview.visible = false;
+			 $.preview.image = '';
+			 currentBlob = null;
+			 updateCount();
+		 });
+	 });
+ });
 
 //Track character count
 var count = 140;
@@ -155,7 +157,7 @@ $.saveBtn.on('click', function() {
 		var summary = [{
 			"timeStamp" : $.timeLabel,
 			"subject" : subject,
-			"title" : $.title.text,
+			"title" : $.title.value,
 			"description" : $.post.value,
 			"teacher" : teacher,
 			"homework" : homeWork

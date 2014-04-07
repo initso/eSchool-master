@@ -61,6 +61,30 @@ Window: {
 	right: '5dp',
 	backgroundColor: "transparent"
 },
+'#imagePreview': {
+	visible:false,
+	opacity:0,
+	left: "50%",
+	top: "235dp", 
+	height:'55dp',
+	width:'55dp'
+},
+
+'#preview': {
+	bottom:0,
+	left:0,
+	height:'44dp',
+	width:'44dp'
+},
+
+'#deleteButton': {
+	top:0,
+	right:0,
+	height:'22dp',
+	width:'22dp',
+	image:'/img/post/close.png'
+},
+
 ".linkLabel": {
 	left: '5dp',
 	color: '#558ED5',
@@ -103,7 +127,8 @@ Window: {
 	height: '30dp',
 	font: {
 		fontSize: '12dp'
-	}
+	},
+	color: '#000000'
 },
 "#timeLabel": {
 	font: {

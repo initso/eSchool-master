@@ -49,7 +49,9 @@
 },
 
 '#email': {
-	keyboardType:Ti.UI.KEYBOARD_EMAIL
+	keyboardType:Ti.UI.KEYBOARD_EMAIL,
+	color: '#000000',
+	returnKeyType: Titanium.UI.RETURNKEY_NEXT
 },
 
 '#passwordWrapper': {
@@ -57,7 +59,9 @@
 },
 
 '#password': {
-	passwordMask:true
+	passwordMask:true,
+	color: '#000000',
+	returnKeyType: Titanium.UI.RETURNKEY_DONE
 },
 
 '#buttonContainer': {
@@ -90,7 +94,7 @@
 },
 
 '#forgotText': {
-	color:'#000',
+	color:'#000000',
 	textAlign:'center',
 	height:Ti.UI.SIZE,
 	width:'125dp',

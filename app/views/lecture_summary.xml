@@ -4,9 +4,9 @@
 			<Label id="title">Lecture Summary</Label>
 		</View>
 		<View id="contentView">
-			<View id="calendarContainer">
+			<View id="calendarContainer"  onClick="actionDatePick">
 				<Label id="date"/>
-				<ImageView id="downArrow" onClick="actionDatePick"/>
+				<ImageView id="downArrow"/>
 			</View>
 			<Label id="count"/>
 			<TableView id="table" onClick="actionLectureDetail"/>
