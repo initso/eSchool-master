@@ -21,7 +21,7 @@ function createFeedsRow(teacher, feedback, i) {
 		left: '8dp',
 		top: '5dp',
 		font: {
-			fontSize: '12dp',
+			fontSize: '14sp',
 			fontWeight: 'bold'
 		},
 		color: '#77933C'
@@ -34,7 +34,7 @@ function createFeedsRow(teacher, feedback, i) {
 		right: '8dp',
 		width: Ti.UI.SIZE,
 		font: {
-			fontSize: 12
+			fontSize: '14sp'
 		},
 		color: '#7F7F7F',
 		ellipsize: true

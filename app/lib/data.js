@@ -5,17 +5,32 @@ function dateStampGen(today) {
 	var dd = today.getDate();
 	var mm = today.getMonth() + 1;
 	//January is 0!
+	var month=new Array();
+	month[0]="January";
+	month[1]="February";
+	month[2]="March";
+	month[3]="April";
+	month[4]="May";
+	month[5]="June";
+	month[6]="July";
+	month[7]="August";
+	month[8]="September";
+	month[9]="October";
+	month[10]="November";
+	month[11]="December";
+	
 	var yyyy = today.getFullYear();
 
 	if (dd < 10) {
 		dd = '0' + dd;
 	}
 
-	if (mm < 10) {
-		mm = '0' + mm;
-	}
+//	if (mm < 10) {
+//		mm = '0' + mm;
+//	}
 
-	today = yyyy + '-' + mm + '-' + dd + "T00:00:00+0000";
+	//today = yyyy + '-' + mm + '-' + dd + "T00:00:00+0000";
+	today = month[today.getMonth()] + ' ' + dd + "";
 	return today;
 }
 

@@ -1,7 +1,7 @@
 "Label": {
 	color: "#000000",
 	font: {
-		fontSize: '14dp'
+		fontSize: '14sp'
 	},	
 	left: '5dp'
 },

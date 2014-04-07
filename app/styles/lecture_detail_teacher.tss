@@ -42,7 +42,7 @@ Window: {
 "Label": {
 	color: "#000000",
 	font: {
-		fontSize: '14dp'
+		fontSize: '14sp'
 	}	
 },
 
@@ -89,7 +89,7 @@ Window: {
 	left: '5dp',
 	color: '#558ED5',
 	font: {
-		fontSize: '12dp' 
+		fontSize: '12sp' 
 	}
 },
 ".checkboxLabel": {
@@ -98,7 +98,7 @@ Window: {
 	width: Ti.UI.SIZE,
 	check: false,
 	font: {
-		fontSize: '12dp'
+		fontSize: '12sp'
 	}
 },
 "Button": {
@@ -110,7 +110,7 @@ Window: {
 	height: '30dp',
 	width: "100dp",
 	font: {
-		fontSize: '14dp',
+		fontSize: '14sp',
 		fontWeight: 'bold'
 	}
 },
@@ -119,19 +119,19 @@ Window: {
 	borderColor: "#DBDBDB",
 	borderWidth: 2,
 	font: {
-		fontSize: '12dp'
+		fontSize: '14sp'
 	}
 },
 "TextField": {
 	backgroundColor: "#FFFFFF",
 	height: '30dp',
 	font: {
-		fontSize: '12dp'
+		fontSize: '14sp'
 	},
 	color: '#000000'
 },
 "#timeLabel": {
 	font: {
-		fontSize: '12dp'
+		fontSize: '14sp'
 	}
 }

@@ -20,7 +20,7 @@
 "Label": {
 	color: "#000000",
 	font: {
-		fontSize: '14dp'
+		fontSize: '14sp'
 	}	
 },
 
@@ -43,6 +43,6 @@
 	left: '5dp',
 	color: '#558ED5',
 	font: {
-		fontSize: '12dp' 
+		fontSize: '14sp' 
 	}
 }

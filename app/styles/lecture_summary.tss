@@ -15,7 +15,7 @@
 "Label": {
 	color: "#000000",
 	font: {
-		fontSize: '14dp'
+		fontSize: '14sp'
 	}	
 },
 ".subject": {
@@ -24,7 +24,7 @@
 	left: '8dp',
 	top: '5dp',
 	font: {
-		fontSize: '14dp',
+		fontSize: '14sp',
 		fontWeight: 'bold'
 	},
 	color: '#000000'
@@ -33,7 +33,7 @@
 	height: Ti.UI.SIZE,
 	width: Ti.UI.SIZE,
 	font: {
-		fontSize: 12
+		fontSize: '14sp'
 	},
 	color: '#77933C'
 },
@@ -48,7 +48,7 @@
 	height: Ti.UI.SIZE,
 	width: Ti.UI.SIZE,
 	font: {
-		fontSize: 12
+		fontSize: '14sp'
 	},
 	color: '#7F7F7F',
 	ellipsize: true
@@ -93,7 +93,7 @@
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	font: {
-		fontSize: 14
+		fontSize: '14sp'
 	},
 	right: '98dp',
 	color: '#000000'
@@ -136,7 +136,7 @@
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	font: {
-		fontSize: 10
+		fontSize: '14sp'
 	},
 	left: '0dp',
 	top: '0dp',
@@ -152,7 +152,7 @@
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	font: {
-		fontSize: 10
+		fontSize: '14sp'
 	},
 	left: '3dp',
 	//top: '30dp',
@@ -162,7 +162,7 @@
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	font: {
-		fontSize: 10
+		fontSize: '12sp'
 	},
 	right: '20dp',
 	top: '30dp',

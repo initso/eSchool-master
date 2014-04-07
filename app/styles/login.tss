@@ -24,7 +24,7 @@
 '#loginHelp': {
 	textAlign:'center',
 	font:{
-		fontSize:'14dp',
+		fontSize:'14sp',
 		fontFamily:'Quicksand'
 	}
 },
@@ -39,7 +39,7 @@
 
 '#loginHelp[platform=android]': {
 	font:{
-		fontSize:'14dp',
+		fontSize:'14sp',
 		fontFamily:'Quicksand-Regular'
 	}
 },
@@ -99,7 +99,7 @@
 	height:Ti.UI.SIZE,
 	width:'125dp',
 	font:{
-		fontSize:'12dp'
+		fontSize:'12sp'
 	}
 },
 
