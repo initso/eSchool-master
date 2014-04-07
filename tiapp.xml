@@ -26,7 +26,7 @@
     <statusbar-hidden>false</statusbar-hidden>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
-    <analytics>true</analytics> 
+    <analytics>true</analytics>
     <guid>91efdd77-88a3-49c1-aeb0-1660edbc6a54</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
@@ -57,8 +57,8 @@
     <android xmlns:android="http://schemas.android.com/apk/res/android">
         <supports-screens android:anyDensity="false"/>
         <manifest>
-	        <uses-permission android:name="android.permission.CAMERA" />
-	    </manifest>
+            <uses-permission android:name="android.permission.CAMERA"/>
+        </manifest>
     </android>
     <mobileweb>
         <precache/>

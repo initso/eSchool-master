@@ -7,6 +7,7 @@ var teacher='';
 var subject='';
 var homeWork = true;
 var test = true;
+var time='';
 
 $.openWindow = function() {
 	$.win.open({
@@ -14,9 +15,13 @@ $.openWindow = function() {
 	});
 };
 
+$.back.on('click', function() {
+	$.win.close();
+});
+
 AppData.getAll(function(dataStore) {
 	console.log("TRIAL:" + dataStore + "   " + dataStore[0]);
-	var dataItem = dataStore[dataID];
+	var dataItem = dataStore[dataId];
 	$.timeLabel.text = dataItem.time;
 	teacher = dataItem.teacher;
 	subject = dataItem.subject;
@@ -155,7 +160,7 @@ $.saveBtn.on('click', function() {
 		$.loading.start();
 
 		var summary = [{
-			"timeStamp" : $.timeLabel,
+			"timeStamp" : $.timeLabel.text,
 			"subject" : subject,
 			"title" : $.title.value,
 			"description" : $.post.value,

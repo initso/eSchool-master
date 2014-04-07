@@ -6,7 +6,7 @@ var userDetails = User.getUserDetails();
 //Set up loading screen
 $.loading = Alloy.createController('loading');
 
-$.name.text = 'Hemant Sir';
+$.name.text = 'James Sir';
 $.email.text = userDetails;
 $.org.text = 'St Johns';
 $.title.text = 'Teacher';
