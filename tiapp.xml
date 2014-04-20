@@ -25,7 +25,7 @@
     <statusbar-style>default</statusbar-style>
     <statusbar-hidden>false</statusbar-hidden>
     <fullscreen>false</fullscreen>
-    <navbar-hidden>false</navbar-hidden>
+    <navbar-hidden>true</navbar-hidden>
     <analytics>true</analytics>
     <guid>91efdd77-88a3-49c1-aeb0-1660edbc6a54</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>

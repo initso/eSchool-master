@@ -1,129 +1,4 @@
-/* Class Style */
-/* Window Container */
-// ".tableRowBackground": {
-	// width: Ti.UI.FILL,
-	// height: '61dp',
-	// bakgroundColor: '#D9D9D9'
-// },
-// ".tableRow": {
-	// left: '5dp',
-	// right: '5dp',
-	// top: '5dp',
-	// bottom: '5dp',
-	// bakgroundColor: '#FFFFFF'
-// },
-"Label": {
-	color: "#000000",
-	font: {
-		fontSize: '14sp'
-	}	
-},
-".subject": {
-	height: Ti.UI.SIZE,
-	width: Ti.UI.SIZE,
-	left: '8dp',
-	top: '5dp',
-	font: {
-		fontSize: '14sp',
-		fontWeight: 'bold'
-	},
-	color: '#000000'
-},
-".teacher": {
-	height: Ti.UI.SIZE,
-	width: Ti.UI.SIZE,
-	font: {
-		fontSize: '14sp'
-	},
-	color: '#77933C'
-},
-".lectureDetail": {
-	top: '24dp',
-	height: '14dp',
-	left: '8dp',
-	right: '8dp',
-	layout: 'horizontal'
-},
-".description": {
-	height: Ti.UI.SIZE,
-	width: Ti.UI.SIZE,
-	font: {
-		fontSize: '14sp'
-	},
-	color: '#7F7F7F',
-	ellipsize: true
-},
-".rightImage": {
-	height: Ti.UI.SIZE,
-	width: Ti.UI.SIZE,
-	right: '8dp',
-	top: '5dp',
-	image: '/images/alert.png'
-},
-".rightImageHomework": {
-	height: Ti.UI.SIZE,
-	width: Ti.UI.SIZE,
-	right: '8dp',
-	top: '5dp',
-	image: '/images/homework.png'
-},
-
-/* UI element common styling */
-"TableViewRow": {
-	height: '65dp', 
-	backgroundColor: '#FFFFFF',
-	borderColor: '#D9D9D9',
-	borderWidth: 2
-},
-
-/* Header View */
-"#headerView": {
-	width: Ti.UI.FILL,
-	height: '5%',
-	top: '0dp',
-	backgroundColor: "transparent",
-},
-"#backArrow":	{
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	left: '8dp',
-	image: "/images/backArrow.jpg"
-},
-"#username": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	font: {
-		fontSize: '14sp'
-	},
-	right: '98dp',
-	color: '#000000'
-},
-"#message":	{
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	right: '68dp',
-	image: '/images/message.jpg'
-},
-"#settings":	{
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	right: '38dp',
-	image: '/images/settings.jpg'
-},
-"#help":	{
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	right: '8dp',
-	image: '/images/help.jpg'
-},
-
-/* Content View : Lecture List */
-"#contentView": {
-	width: Ti.UI.FILL,
-	height: '85%',
-	top: '10%',
-	backgroundColor: "transparent"
-},
+/* Content View : Header-date */
 "#calendarContainer": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
@@ -131,16 +6,6 @@
 	left: '15dp',
 	layout: 'horizontal',
 	backgroundColor: "transparent"
-},
-"#calendar": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	font: {
-		fontSize: '14sp'
-	},
-	left: '0dp',
-	top: '0dp',
-	color: '#559FE3'
 },
 "#downArrow": {
 	width: '10dp',
@@ -155,56 +20,122 @@
 		fontSize: '14sp'
 	},
 	left: '3dp',
-	//top: '30dp',
-	color: '#559FE3'
+	color: '#000000'
+},
+"#selectedDate": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: '14sp'
+	},
+	left: '10dp',
+	top: '30dp',
+	color: '#000000'
 },
 "#count": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	font: {
-		fontSize: '12sp'
+		fontSize: '14sp'
 	},
 	right: '20dp',
 	top: '30dp',
 	color: '#7F7F7F'
 },
+
+/* Content View - table */
 "#table": {
 	left: '8dp',
-	right: '8dp',
-	top: '50dp',
+	right: '12dp',
+	top: '60dp',
+	bottom: '20dp',
 	height: Ti.UI.SIZE,
-	borderColor: '#D9D9D9',
-	borderWidth: 2
+	separatorColor: 'transparent'
 },
-"#description1": {
-	height: '14dp',
+".tableRow": {
+	height: '110dp'
+},
+".tableRowBackgoundView": {
+	top: '2dp',
+	bottom: '2dp',
+	backgroundColor: '#D9D9D9',
+	width: Ti.UI.FILL
+},
+".tableRowContentView": {
+	top: '3dp',
+	bottom: '3dp',
 	left: '3dp',
-	right: '8dp',
-	top: '0dp'
+	right: '3dp',
+	backgroundColor: '#FFFFFF',
+	layout: 'vertical'
 },
-"#description2": {
-	height: '14dp',
-	left: '8dp',
-	right: '8dp',
-	top: '41dp'
+".subjectLabel": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	left: '10dp',
+	top: '3dp',
+	font: {
+		fontSize: '16sp',
+		fontWeight: 'bold'
+	},
+	color: '#000000'
 },
-
-/* Footer View */
-"#footerView": {
+".timeContainerView": {
+	height: '21dp',
 	width: Ti.UI.FILL,
-	height: '5%',
-	bottom: '0dp',
-	backgroundColor: "transparent"
+	right: '10dp',
+	left: '10dp',
+	top: '1dp',
+	layout: 'horizontal'
 },
-"#search":	{
-	width: Ti.UI.SIZE,
+".timeLabel": {
 	height: Ti.UI.SIZE,
-	right: '38dp',
-	image: '/images/search.png'
+	width: Ti.UI.SIZE,
+	left: '0dp',
+	top: '0dp',
+	font: {
+		fontSize: '16sp'
+	},
+	color: '#000000'
 },
-"#list":	{
+".teacherLabel": {
+	height: '21dp',
+	width: Ti.UI.FILL,
+	right: '0dp',
+	left: '5dp',
+	top: '0dp',
+	font: {
+		fontSize: '16sp'
+	},
+	color: '#77933C',
+	ellipsize: true,
+	wordWrap: false
+},
+".lectureDetailLabel": {
+	top: '2dp',
+	left: '10dp',
+	right: '10dp',
+	height: '40dp',
 	width: Ti.UI.SIZE,
+	font: {
+		fontSize: '16sp'
+	},
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+	color: '#7F7F7F',
+	ellipsize: true,
+	// wordWrap: false
+},
+".rowRightImageTest": {
 	height: Ti.UI.SIZE,
-	right: '8dp',
-	image: '/images/list.png'
+	width: Ti.UI.SIZE,
+	right: '10dp',
+	top: '8dp',
+	image: '/images/lectureSummary/test.png'
+},
+".rowRightImageHomework": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	right: '10dp',
+	top: '8dp',
+	image: '/images/lectureSummary/homework.png'
 }

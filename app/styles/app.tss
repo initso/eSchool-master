@@ -1,13 +1,106 @@
 //
 // Frame / Typography
 //
+
 Window: {
 	navBarHidden: true,
-	backgroundColor: "#F2F2F2"
+	backgroundImage: '/images/common/background.png'
+},
+
+/******************* Header Styles *********************/
+
+'#headerView': {
+	top: '0dp',
+	height: '8%',
+	width: Ti.UI.FILL
+},
+
+'#headerLeftContainer': {
+	height: Ti.UI.FILL,
+	width: Ti.UI.SIZE,
+	left: '10dp',
+	top: '20%',
+	layout: 'horizontal'
+},
+
+'#headerRightContainer': {
+	height: Ti.UI.FILL,
+	width: Ti.UI.SIZE,
+	right: '10dp',
+	top: '20%',
+	layout: 'horizontal'
+},
+
+"#usernameLabel": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: '16sp'
+	},
+	right: '10dp',
+	color: '#000000'
+},
+
+'#search': {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	left: '0dp',
+	image: '/images/header/search.png'
+},
+
+'#message': {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	left: '10dp',
+	image: '/images/header/message.png'
+},
+
+'#settings': {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	left: '10dp',
+	image: '/images/header/settings.png'
+},
+
+'#help': {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	left: '10dp',
+	image: '/images/header/help.png'
+},
+
+/*----------------------------------------------------*/
+
+/******************* Title Bar Styles *********************/
+
+'.titleView': {
+	top: '8%',
+	height: '6%',
+	width: Ti.UI.FILL,
+	backgroundColor: '#604A7B'
+},
+
+'.titleLabel': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: '20sp',
+		fontWeight: 'bold'
+	},
+	left: '10dp',
+	color: '#FFFFFF'
+},
+
+/*----------------------------------------------------*/
+
+".contentView": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	top: '14%'
 },
 
 'Window[platform=android]': {
-	windowSoftInputMode:Ti.UI.Android.SOFT_INPUT_ADJUST_RESIZE
+	windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_ADJUST_RESIZE
 },
 
 TextField: {
@@ -47,11 +140,11 @@ Label: {
 },
 
 TableView: {
-	width: Ti.UI.FILL,
-	height: Ti.UI.FILL,
-	showVerticalScrollIndicator: true,
-	separatorStyle: Ti.UI.iPhone.TableViewSeparatorStyle.SINGLE_LINE,
-	backgroundColor:'transparent'
+	// width: Ti.UI.FILL,
+	// height: Ti.UI.FILL,
+	// showVerticalScrollIndicator: true,
+	// separatorStyle: Ti.UI.iPhone.TableViewSeparatorStyle.SINGLE_LINE,
+	// backgroundColor:'transparent'
 },
 
 '#headerViewContainer': {
@@ -65,7 +158,7 @@ TableView: {
 	color:'#0574bf',
 	font: {
 		fontFamily:'Quicksand-Bold',
-		fontSize:'18dp'
+		fontSize:'18sp'
 	}
 },
 
@@ -83,30 +176,6 @@ TableView: {
 	image:'/img/general/btn-right-arrow.png',
 	right:'5dp'
 },
-
-/* Title View */
-"#titleView": {
-	width: Ti.UI.FILL,
-	height: '5%',
-	top: '5%',
-	backgroundColor: "#31859C"
-},
-"#title": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	font: {
-		fontSize: 16,
-		fontWeight: 'bold'
-	},
-	left: '5dp',
-	color: '#FFFFFF'
-},
-
-
-
-
-
-
 
 
 //

@@ -1,21 +1,27 @@
 <Alloy>
 	<Window class="container" id="lectureSummaryWin">
-		<View id="titleView">
-			<Label id="title">Lecture Summary</Label>
+		<View id="headerView">
+			<View id="headerLeftContainer">
+				<ImageView id="search"/>
+			</View>
+			<View id="headerRightContainer">
+				<Label id="usernameLabel">Hi ,</Label>
+				<ImageView id="message"/>
+				<ImageView id="settings"/>
+				<ImageView id="help"/>
+			</View>
 		</View>
-		<View id="contentView">
+		<View class="titleView">
+			<Label class="titleLabel">Lecture Summary</Label>
+		</View>
+		<View class="contentView">
 			<View id="calendarContainer"  onClick="actionDatePick">
 				<Label id="date"/>
 				<ImageView id="downArrow"/>
 			</View>
 			<Label id="count"/>
+			<Label id="selectedDate">Today, January 8th</Label>
 			<TableView id="table" onClick="actionLectureDetail"/>
 		</View>
-		<!--
-		<View id="footerView">
-		<ImageView id="search" />
-		<ImageView id="list" />
-		</View>
-		-->
 	</Window>
 </Alloy>
