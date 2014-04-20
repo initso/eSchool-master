@@ -15,7 +15,7 @@ $.openWindow = function() {
 	});
 };
 
-$.back.on('click', function() {
+$.backArrow.on('click', function() {
 	$.win.close();
 });
 

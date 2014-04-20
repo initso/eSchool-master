@@ -18,7 +18,7 @@ Window: {
 '#headerLeftContainer': {
 	height: Ti.UI.FILL,
 	width: Ti.UI.SIZE,
-	left: '10dp',
+	left: '0dp',
 	top: '20%',
 	layout: 'horizontal'
 },
@@ -41,10 +41,17 @@ Window: {
 	color: '#000000'
 },
 
+'#backArrow': {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	left: '5dp',
+	image: '/images/header/backArrow.png'
+},
+
 '#search': {
 	height: Ti.UI.SIZE,
 	width: Ti.UI.SIZE,
-	left: '0dp',
+	left: '10dp',
 	image: '/images/header/search.png'
 },
 

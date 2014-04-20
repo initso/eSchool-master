@@ -1,71 +1,33 @@
-Window: {
-	modal:true,
-	navBarHidden:true,
-	backgroundImage:'/img/general/bg-interior.png'
-},
-
-'#header': {
-	backgroundImage:'/img/header/bg-title.png',
-	height:'45dp',
-	top:0
-},
-
-'#logo': {
-	height:'22dp',
-	width:'81dp'
-},
-
-'#underline': {
-	backgroundColor:'#0574bf',
-	bottom:0,
-	height:'2dp'
-},
-
-'#back': {
-	left:'10dp',
-	width:'50dp'
-},
-
-'#backImage': {
-	left:0,
-	width:'18dp',
-	height:'19dp',
-	image:'/img/general/btn-back.png'
-},
-
-'#postContainer': {
-	top:'50dp',
-	left:'5dp',
-	right:'5dp',
-	bottom:'5dp'
-},
-
 "Label": {
 	color: "#000000",
 	font: {
-		fontSize: '14sp'
+		fontSize: '16sp'
 	}	
 },
 
 ".heading": {
 	font: {
 		fontWeight: 'bold'
-	}	
+	}
 },
 
 /* Content View : Lecture List */
-"#contentView": {
-	width: Ti.UI.FILL,
-	height: '85%',
-	top: '10%',
-	left: '10dp',
-	right: '5dp',
-	backgroundColor: "transparent"
+"#teacherNameLabel": {
+	 left: "10dp",
+	 top: "40dp",
+	 right: '10dp',
+	 height: Ti.UI.SIZE,
+	 wordWrap: false,
+	 ellipsize: true
+},
+"#timeLabel": {
+	 top: "10dp",
+	 right: '10dp',
+	 font: {
+	 	fontSize: '14sp'
+	 }
 },
 "#attachmentLabel": {
 	left: '5dp',
-	color: '#558ED5',
-	font: {
-		fontSize: '14sp' 
-	}
+	color: '#558ED5'
 }

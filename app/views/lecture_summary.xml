@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container" id="lectureSummaryWin">
+	<Window id="lectureSummaryWin">
 		<View id="headerView">
 			<View id="headerLeftContainer">
 				<ImageView id="search"/>

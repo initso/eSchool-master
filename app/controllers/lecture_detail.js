@@ -5,8 +5,12 @@ var dateStamp = args.dateStamp;
 if (!dataId)
 	console.log("Form:" + dataId);
 
-$.back.on('click', function() {
+$.backArrow.on('click', function() {
 	$.lectureDetailWin.close();
+});
+
+$.attachment.on('click', function() {
+	// select attachment code
 });
 
 $.openWindow = function() {
