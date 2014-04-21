@@ -1,0 +1,106 @@
+/* Content View : Header-date */
+"#calendarContainer": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	top: '5dp',
+	left: '15dp',
+	layout: 'horizontal',
+	backgroundColor: "transparent"
+},
+"#downArrow": {
+	width: '10dp',
+	height: '12dp',
+	left: '3dp',
+	image: '/images/downArrow.png'
+},
+"#date": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: '14sp'
+	},
+	left: '3dp',
+	color: '#000000'
+},
+"#selectedDate": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: '14sp'
+	},
+	left: '10dp',
+	top: '30dp',
+	color: '#000000'
+},
+"#count": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: '14sp'
+	},
+	right: '20dp',
+	top: '30dp',
+	color: '#7F7F7F'
+},
+"#iconPlus": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	right: '12dp',
+	top: '5dp',
+	image: '/images/performanceAnalysis/iconPlus.png'
+},
+
+/* Content View - table labels */
+".subjectLabel": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	left: '10dp',
+	top: '3dp',
+	font: {
+		fontSize: '16sp',
+		fontWeight: 'bold'
+	},
+	color: '#000000'
+},
+".timeLabel": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	right: '10dp',
+	left: '10dp',
+	top: '2dp',
+	font: {
+		fontSize: '16sp'
+	},
+	color: '#000000'
+},
+".marksContainerView": {
+	top: '2dp',
+	left: '10dp',
+	right: '10dp',
+	height: Ti.UI.SIZE,
+	layout: 'horizontal'
+},
+".marksHeadingLabel": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	left: '0dp',
+	top: '0dp',
+	font: {
+		fontSize: '14sp'
+	},
+	color: '#77933C',
+	wordWrap: false
+},
+".marksLabel": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	right: '0dp',
+	left: '5dp',
+	top: '0dp',
+	font: {
+		fontSize: '14sp'
+	},
+	color: '#77933C',
+	ellipsize: true,
+	wordWrap: false
+}

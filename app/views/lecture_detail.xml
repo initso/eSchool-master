@@ -19,7 +19,7 @@
 			<Label left="10dp" top="10dp">Teacher Name:</Label>
 			<Label id="teacherNameLabel" />
 			<Label id="timeLabel">9.00AM-10.00AM</Label>
-			<Label left="10dp" top="75dp"  class="heading">Lecture Details:</Label>
+			<Label left="10dp" top="75dp"  class="headingLabel">Lecture Details:</Label>
 			<ScrollView top="115dp" left="10dp" right="10dp" bottom="10dp" layout="vertical">
 				<Label left="0dp" top="0dp" id="details" />
 				<View  left="5dp" top="20dp" height=Ti.UI.SIZE width=Ti.UI.SIZE layout="horizontal" id="attachment">

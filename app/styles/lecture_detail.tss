@@ -1,16 +1,3 @@
-"Label": {
-	color: "#000000",
-	font: {
-		fontSize: '16sp'
-	}	
-},
-
-".heading": {
-	font: {
-		fontWeight: 'bold'
-	}
-},
-
 /* Content View : Lecture List */
 "#teacherNameLabel": {
 	 left: "10dp",

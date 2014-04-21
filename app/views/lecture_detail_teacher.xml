@@ -18,7 +18,7 @@
 		<View class="contentView">
 			<Label left="0dp" top="10dp">Lecture Title:</Label>
 			<TextField id="title" left="100dp" top="10dp" maxLength=50 width="200dp" color="#000000"/>
-			<Label left="0dp" top="45dp" class="heading">Lecture Details:</Label>
+			<Label left="0dp" top="45dp" class="headingLabel">Lecture Details:</Label>
 			<Label right="2dp" top="45dp" id="timeLabel"/>
 			<TextArea top="75dp" left="0dp" right="5dp" height="150dp" maxLength=140 id="post"/>
 			<View  left="5dp" top="235dp" height=Ti.UI.SIZE width=Ti.UI.SIZE layout="horizontal">
