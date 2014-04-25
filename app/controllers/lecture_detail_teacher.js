@@ -10,13 +10,13 @@ var test = true;
 var time='';
 
 $.openWindow = function() {
-	$.win.open({
+	$.lectureDetailWin.open({
 		modal:true
 	});
 };
 
 $.backArrow.on('click', function() {
-	$.win.close();
+	$.lectureDetailWin.close();
 });
 
 AppData.getAll(function(dataStore) {
