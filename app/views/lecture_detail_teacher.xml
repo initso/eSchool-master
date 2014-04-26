@@ -16,17 +16,17 @@
 			<Label class="titleLabel" id="title">Add Lecture Details</Label>
 		</View>
 		<View class="contentView">
-			<Label left="0dp" top="10dp">Lecture Title:</Label>
-			<TextField id="title" left="100dp" top="10dp" maxLength=50 width="200dp" color="#000000"/>
-			<Label left="0dp" top="45dp" class="headingLabel">Lecture Details:</Label>
-			<Label right="2dp" top="45dp" id="timeLabel"/>
-			<TextArea top="75dp" left="0dp" right="5dp" height="150dp" maxLength=140 id="post"/>
+			<Label left="5dp" top="10dp">Lecture Title:</Label>
+			<TextField id="title" left="105dp" top="10dp" maxLength=50 width="200dp" color="#000000"/>
+			<Label left="5dp" top="45dp" class="headingLabel">Lecture Details:</Label>
+			<Label right="5dp" top="45dp" id="timeLabel"/>
+			<TextArea id="post"/>
 			<View  left="5dp" top="235dp" height=Ti.UI.SIZE width=Ti.UI.SIZE layout="horizontal">
-				<ImageView image="/images/attachment.png"></ImageView>
+				<ImageView image="/images/common/attachment.png"></ImageView>
 				<Label id="attachmentLabel" class="linkLabel">Attachments</Label>
 			</View>
 			<View  left="50%" top="235dp" height=Ti.UI.SIZE width=Ti.UI.SIZE layout="horizontal" id="camera">
-				<ImageView image="/images/camera.png"></ImageView>
+				<ImageView image="/images/common/camera.png"></ImageView>
 				<Label class="linkLabel">Camera</Label>
 			</View>
 			<View id="imagePreview">
@@ -36,13 +36,13 @@
 			<ImageView image="/images/checked.png" left="5dp" top="280dp" onClick="actionHomeworkCheckbox"/>
 			<Label top="278dp" left="30dp" class="checkboxLabel">Homework</Label>
 			<Label top="300dp" left="30dp">Select time:</Label>
-			<TextField top="295dp" left="110dp" width="200dp"/>
+			<TextField top="295dp" left="120dp" width="200dp"/>
 			<ImageView image="/images/checked.png" left="5dp" top="330dp"  onClick="actionTestCheckbox"/>
 			<Label top="328dp" left="30dp" class="checkboxLabel">Test</Label>
 			<Label top="350dp" left="30dp">Select time:</Label>
-			<TextField top="345dp" left="110dp" width="200dp"/>
-			<Button id="saveBtn" bottom="5dp" right="115dp">Save</Button>
-			<Button id="cancelBtn" bottom="5dp" right="5dp">Cancel</Button>
+			<TextField top="345dp" left="120dp" width="200dp"/>
+			<Button id="saveBtn" top="410dp" right="115dp">Save</Button>
+			<Button id="cancelBtn" top="410dp" right="5dp">Cancel</Button>
 		</View>
 	</Window>
 </Alloy>

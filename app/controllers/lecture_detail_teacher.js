@@ -11,7 +11,8 @@ var time='';
 
 $.openWindow = function() {
 	$.lectureDetailWin.open({
-		modal:true
+		modal:true,
+		windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_STATE_ALWAYS_VISIBLE | Ti.UI.Android.SOFT_INPUT_ADJUST_PAN
 	});
 };
 

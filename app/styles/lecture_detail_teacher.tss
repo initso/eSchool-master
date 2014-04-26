@@ -1,16 +1,3 @@
-"Label": {
-	color: "#000000",
-	font: {
-		fontSize: '16sp'
-	}	
-},
-
-".heading": {
-	font: {
-		fontWeight: 'bold'
-	}
-},
-
 /* Content View : Lecture List */
 '#imagePreview': {
 	visible:false,
@@ -40,7 +27,7 @@
 	left: '5dp',
 	color: '#558ED5',
 	font: {
-		fontSize: '12sp' 
+		fontSize: '14sp' 
 	}
 },
 ".checkboxLabel": {
@@ -49,14 +36,15 @@
 	width: Ti.UI.SIZE,
 	check: false,
 	font: {
-		fontSize: '12sp'
+		fontSize: '14sp',
+		fontWeight: 'bold'
 	}
 },
 "Button": {
 	backgroundColor: "#4F81BD",
 	borderColor: "#395E8C",
 	backgroundImage: "None",
-	borderWidth: 2,
+	borderWidth: '2dp',
 	color: "#000000",
 	height: '30dp',
 	width: "100dp",
@@ -65,13 +53,18 @@
 		fontWeight: 'bold'
 	}
 },
-"TextArea": {
+"#post": {
 	backgroundColor: "#FFFFFF",
 	borderColor: "#DBDBDB",
-	borderWidth: 2,
+	borderWidth: '2dp',
 	font: {
 		fontSize: '14sp'
-	}
+	},
+	 top: "75dp", 
+	 left: "10dp", 
+	 right: "10dp",
+	 height: "150dp",
+	 maxLength: 140 
 },
 "TextField": {
 	backgroundColor: "#FFFFFF",
