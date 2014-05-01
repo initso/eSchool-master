@@ -1,0 +1,28 @@
+<Alloy>
+	<Window id="performanceAnalysisWin">
+		<View id="headerView">
+			<View id="headerLeftContainer">
+				<ImageView id="search"/>
+			</View>
+			<View id="headerRightContainer">
+				<Label id="usernameLabel">Hi ,</Label>
+				<ImageView id="message"/>
+				<ImageView id="settings"/>
+				<ImageView id="help"/>
+			</View>
+		</View>
+		<View class="titleView">
+			<Label class="titleLabel">Performance Analysis</Label>
+		</View>
+		<View class="contentView">
+			<View id="calendarContainer"  onClick="actionDatePick">
+				<Label id="date"/>
+				<ImageView id="downArrow"/>
+			</View>
+			<ImageView id="iconPlus" onClick="actionNewTest"/>
+			<Label id="count"/>
+			<Label id="selectedDate">Today, January 8th</Label>
+			<TableView id="table" class="table"/>
+		</View>
+	</Window>
+</Alloy>

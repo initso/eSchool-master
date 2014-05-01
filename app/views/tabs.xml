@@ -6,14 +6,11 @@
 		<View id="agenda" class="tab">
 			<ImageView id="agendaIcon"/>
 		</View>
-		<View id="post" class="tab">
-			<Button id="postIcon"/>
-		</View>
 		<View id="feedback" class="tab">
 			<ImageView id="feedbackIcon"/>
 		</View>
-		<View id="venue" class="tab">
-			<ImageView id="venueIcon"/>
+		<View id="evaluation" class="tab">
+			<ImageView id="evaluationIcon"/>
 		</View>
 	</View>
 </Alloy>

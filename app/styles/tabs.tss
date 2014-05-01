@@ -11,13 +11,6 @@
 	width:'20%'
 },
 
-'#postIcon': {
-	height:'46dp',
-	width:'64dp',
-	backgroundImage:'/img/tabs/btn-post-default.png',
-	backgroundSelectedImage:'/img/tabs/btn-post-pressed.png'
-},
-
 '#homeIcon': {
 	image:'/img/tabs/btn-home-pressed.png'
 },
@@ -30,8 +23,8 @@
 	image:'/img/tabs/btn-agenda-default.png'
 },
 
-'#venueIcon': {
-	image:'/img/tabs/btn-venue-default.png'
+'#evaluationIcon': {
+	image:'/img/tabs/btn-evaluation-default.png'
 }
 
 
